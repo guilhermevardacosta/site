@@ -11,5 +11,5 @@ function carregarComponente(id, arquivo) {
     });
 }
 
-carregarComponente('header', '/components/header.html');
-carregarComponente('footer', '/components/footer.html');
+carregarComponente('header', './components/header.html');
+carregarComponente('footer', './components/footer.html');
