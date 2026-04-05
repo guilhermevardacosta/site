@@ -1,0 +1,257 @@
+/* =========================
+   Base
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f0e6;
+    --paper: #fffdf9;
+    --paper-2: #f1e8d8;
+    --text: #2a241f;
+    --muted: #6c6258;
+    --line: #d8cbb7;
+    --accent: #6f4b3e;
+    --accent-2: #8a6a2f;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    --radius: 10px;
+    --content-width: 760px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.75;
+    font-size: 18px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* =========================
+   Tipografia
+========================= */
+h1, h2, h3, h4 {
+    font-weight: normal;
+    line-height: 1.2;
+    color: #1f1a16;
+}
+
+h1 {
+    font-size: clamp(2.1rem, 4vw, 3.1rem);
+    letter-spacing: 0.02em;
+}
+
+h2 {
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+p {
+    margin-bottom: 1.1rem;
+}
+
+ul, ol {
+    margin: 0 0 1.2rem 1.4rem;
+}
+
+li + li {
+    margin-top: 0.45rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-2);
+    text-decoration: underline;
+}
+
+/* =========================
+   Estrutura principal
+========================= */
+#header,
+#footer {
+    width: min(92%, 1100px);
+    margin: 0 auto;
+}
+
+main {
+    width: min(92%, var(--content-width));
+    margin: 2rem auto 4rem;
+    background: var(--paper);
+    border: 1px solid rgba(216, 203, 183, 0.7);
+    border-radius: var(--radius);
+    padding: clamp(1.4rem, 3vw, 3rem);
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+main::before {
+    content: "";
+    display: block;
+    width: 72px;
+    height: 2px;
+    background: var(--accent-2);
+    margin-bottom: 1.4rem;
+    opacity: 0.75;
+}
+
+/* =========================
+   Cabeçalho
+========================= */
+header {
+    width: min(92%, 1100px);
+    margin: 0 auto;
+    padding: 2.5rem 0 1.3rem;
+}
+
+header h1 {
+    margin-bottom: 0.6rem;
+}
+
+header p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+}
+
+header nav a {
+    font-size: 0.98rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+header nav a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* =========================
+   Rodapé
+========================= */
+footer {
+    width: min(92%, 1100px);
+    margin: 0 auto 2.5rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1rem;
+    margin-top: 0.8rem;
+}
+
+footer nav a {
+    color: var(--muted);
+}
+
+/* =========================
+   Listas de posts
+========================= */
+main ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+main ul li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+main ul li:last-child {
+    border-bottom: 0;
+}
+
+main ul li a {
+    font-size: 1.1rem;
+}
+
+/* =========================
+   Imagens
+========================= */
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+/* =========================
+   Destaque de trechos
+========================= */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.2rem;
+    border-left: 4px solid var(--accent-2);
+    background: var(--paper-2);
+    color: #3b342d;
+    font-style: italic;
+}
+
+/* =========================
+   Tabelas simples, caso use
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--line);
+}
+
+/* =========================
+   Responsividade
+========================= */
+@media (max-width: 700px) {
+    body {
+        font-size: 17px;
+    }
+
+    header {
+        padding-top: 1.8rem;
+    }
+
+    header nav {
+        gap: 0.7rem 1rem;
+    }
+
+    header nav a {
+        font-size: 0.9rem;
+    }
+
+    main {
+        margin-top: 1.4rem;
+        padding: 1.2rem;
+    }
+}
