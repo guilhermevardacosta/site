@@ -1,14 +1,20 @@
 RewriteEngine On
 
-# Remove index.html da URL
+# 1) Força barra final em diretórios reais
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.+)$ /$1/ [L,R=301]
+
+# 2) Remove index.html
 RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
 RewriteRule ^(.*/)?index\.html$ /$1 [L,R=301]
 
-# Remove .html das demais páginas
+# 3) Remove .html das páginas comuns
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [L,R=301]
 
-# Reescreve URL sem extensão para o arquivo .html correspondente
+# 4) Reescreve URL sem extensão para o arquivo .html correspondente
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L]
