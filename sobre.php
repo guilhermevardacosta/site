@@ -1,20 +1,12 @@
-<!DOCTYPE html>
+<?php
+$pageTitle = 'Sobre';
+$pageDescription = 'Saiba mais sobre o site e projetos.';
+$pageCanonical = 'https://guilhermevardacosta.com.br/sobre';
 
-<html lang="pt-BR">
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+?>
 
-	<head>
-
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Sobre | Guilherme Vardacosta</title>
-		<meta name="description" content="Saiba mais sobre o site e projetos.">
-        <link rel="stylesheet" href="assets/css/style.css">
-	
-	</head>
-
-	<body>
-
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/components/header.php'; ?>
 
         <main>
 

@@ -1,21 +1,12 @@
-<!DOCTYPE html>
+<?php
+$pageTitle = 'Meu primeiro post';
+$pageDescription = 'Primeiro texto do blog, com uma breve apresentação da proposta do site e dos temas que serão abordados.';
+$pageCanonical = 'https://guilhermevardacosta.com.br/blog/01-meu-primeiro-post';
 
-<html lang="pt-BR">
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
+?>
 
-	<head>
-
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Meu primeiro post</title>
-		<meta name="description" content="Artigos sobre livros de fantasia, literatura e reflexões.">
-		<link rel="icon" href="../assets/img/favicon.ico">
-		<link rel="stylesheet" href="../assets/css/style.css">
-
-	</head>
-
-	<body>
-
-		<?php include $_SERVER['DOCUMENT_ROOT'] . '/components/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/components/header.php'; ?>
 
 		<main>
 

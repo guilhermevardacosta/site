@@ -20,7 +20,7 @@ function linkAtivo(string $rota, string $caminhoAtual): string
 <header class="site-header">
     <div class="site-header-inner">
         <div class="site-brand">
-            <p class="site-kicker">Literatura, fantasia e imaginação</p>
+            <p class="site-kicker">Literatura e fantasia</p>
             <h1 class="site-title">
                 <a href="/">Guilherme Vardacosta</a>
             </h1>
