@@ -1,9 +1,9 @@
 /* =========================
-   Base
+   Reset e variáveis
 ========================= */
-* {
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -16,9 +16,22 @@
     --line: #d8cbb7;
     --accent: #6f4b3e;
     --accent-2: #8a6a2f;
-    --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+
+    --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.08);
+
     --radius: 10px;
+    --radius-lg: 14px;
+
     --content-width: 760px;
+    --wide-width: 1100px;
+
+    --space-1: 0.4rem;
+    --space-2: 0.75rem;
+    --space-3: 1rem;
+    --space-4: 1.4rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
 }
 
 html {
@@ -26,17 +39,28 @@ html {
 }
 
 body {
+    margin: 0;
     font-family: Georgia, "Times New Roman", serif;
-    line-height: 1.75;
     font-size: 18px;
+    line-height: 1.75;
     background: var(--bg);
     color: var(--text);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: rgba(138, 106, 47, 0.18);
 }
 
 /* =========================
    Tipografia
 ========================= */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
     font-weight: normal;
     line-height: 1.2;
     color: #1f1a16;
@@ -49,21 +73,29 @@ h1 {
 
 h2 {
     font-size: clamp(1.7rem, 3vw, 2.3rem);
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-3);
 }
 
 h3 {
     font-size: 1.25rem;
-    margin-top: 2rem;
+    margin-top: var(--space-5);
     margin-bottom: 0.8rem;
 }
 
-p {
-    margin-bottom: 1.1rem;
+h4 {
+    font-size: 1.1rem;
+    margin-top: var(--space-4);
+    margin-bottom: 0.7rem;
 }
 
-ul, ol {
+p {
+    margin: 0 0 1.1rem;
+}
+
+ul,
+ol {
     margin: 0 0 1.2rem 1.4rem;
+    padding-left: 0.4rem;
 }
 
 li + li {
@@ -73,7 +105,7 @@ li + li {
 a {
     color: var(--accent);
     text-decoration: none;
-    transition: opacity 0.2s ease, color 0.2s ease;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 a:hover {
@@ -81,12 +113,22 @@ a:hover {
     text-decoration: underline;
 }
 
+a:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+strong {
+    color: #1f1a16;
+}
+
 /* =========================
-   Estrutura principal
+   Estrutura geral
 ========================= */
-#header,
-#footer {
-    width: min(92%, 1100px);
+header,
+footer {
+    width: min(92%, var(--wide-width));
     margin: 0 auto;
 }
 
@@ -94,10 +136,10 @@ main {
     width: min(92%, var(--content-width));
     margin: 2rem auto 4rem;
     background: var(--paper);
-    border: 1px solid rgba(216, 203, 183, 0.7);
+    border: 1px solid rgba(216, 203, 183, 0.72);
     border-radius: var(--radius);
     padding: clamp(1.4rem, 3vw, 3rem);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-sm);
     position: relative;
 }
 
@@ -111,22 +153,19 @@ main::before {
     opacity: 0.75;
 }
 
+main > *:last-child {
+    margin-bottom: 0;
+}
+
 /* =========================
    Cabeçalho
 ========================= */
 header {
-    width: min(92%, 1100px);
-    margin: 0 auto;
     padding: 2.5rem 0 1.3rem;
 }
 
 header h1 {
     margin-bottom: 0.6rem;
-}
-
-header p {
-    color: var(--muted);
-    margin-bottom: 1rem;
 }
 
 header nav {
@@ -138,6 +177,7 @@ header nav {
 }
 
 header nav a {
+    position: relative;
     font-size: 0.98rem;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -149,12 +189,27 @@ header nav a:hover {
     text-decoration: none;
 }
 
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.2rem;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.2s ease;
+}
+
+header nav a:hover::after,
+header nav a:focus-visible::after {
+    width: 100%;
+}
+
 /* =========================
    Rodapé
 ========================= */
 footer {
-    width: min(92%, 1100px);
-    margin: 0 auto 2.5rem;
+    margin-bottom: 2.5rem;
     padding-top: 1.4rem;
     border-top: 1px solid var(--line);
     color: var(--muted);
@@ -172,67 +227,180 @@ footer nav a {
     color: var(--muted);
 }
 
-/* =========================
-   Listas de posts
-========================= */
-main ul {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-main ul li {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--line);
-}
-
-main ul li:last-child {
-    border-bottom: 0;
-}
-
-main ul li a {
-    font-size: 1.1rem;
+footer nav a:hover {
+    color: var(--accent);
 }
 
 /* =========================
-   Imagens
+   Conteúdo geral
 ========================= */
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
     border-radius: 8px;
 }
 
-/* =========================
-   Destaque de trechos
-========================= */
 blockquote {
-    margin: 1.5rem 0;
+    margin: 1.6rem 0;
     padding: 1rem 1.2rem;
     border-left: 4px solid var(--accent-2);
     background: var(--paper-2);
     color: #3b342d;
     font-style: italic;
+    border-radius: 0 8px 8px 0;
 }
 
-/* =========================
-   Tabelas simples, caso use
-========================= */
+hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 2rem 0;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
+    font-size: 0.98rem;
 }
 
-th, td {
+th,
+td {
     text-align: left;
-    padding: 0.8rem;
+    padding: 0.85rem;
     border-bottom: 1px solid var(--line);
+    vertical-align: top;
+}
+
+th {
+    color: #1f1a16;
+}
+
+/* =========================
+   Blog - listagem
+========================= */
+.posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.post-card {
+    border: 1px solid rgba(216, 203, 183, 0.9);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: #ccb99d;
+}
+
+.post-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-card-link:hover {
+    text-decoration: none;
+}
+
+.post-card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 0;
+    background: #ebe3d6;
+}
+
+.post-card-content {
+    padding: 1.05rem 1.1rem 1.15rem;
+}
+
+.post-card-date,
+.post-single-date {
+    font-size: 0.94rem;
+    color: var(--muted);
+    opacity: 0.95;
+    margin-bottom: 0.75rem;
+}
+
+.post-card-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.35rem;
+    line-height: 1.25;
+}
+
+.post-card-summary {
+    margin: 0 0 1rem;
+    line-height: 1.65;
+    color: #3a332d;
+}
+
+.post-card-readmore {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* =========================
+   Blog - post individual
+========================= */
+.post-single {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.post-single h1 {
+    margin-bottom: 1rem;
+}
+
+.post-single-image {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    margin: 1rem 0 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.post-single p,
+.post-single ul,
+.post-single ol,
+.post-single blockquote,
+.post-single table {
+    max-width: 70ch;
+}
+
+.post-single p {
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+}
+
+/* =========================
+   Ajustes úteis para páginas internas
+========================= */
+main p + h3,
+main ul + h3,
+main ol + h3 {
+    margin-top: 2.2rem;
 }
 
 /* =========================
    Responsividade
 ========================= */
+@media (min-width: 900px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 700px) {
     body {
         font-size: 17px;
@@ -254,91 +422,32 @@ th, td {
         margin-top: 1.4rem;
         padding: 1.2rem;
     }
+
+    .post-card-image {
+        height: 200px;
+    }
+
+    .post-card-title {
+        font-size: 1.2rem;
+    }
+
+    .post-single-image {
+        margin: 0.9rem 0 1.5rem;
+    }
 }
 
-.container {
-  gap: 1.5rem;
-  padding: 2rem 0 3rem;
-}
+/* =========================
+   Redução de movimento
+========================= */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 
-.post-card {
-  border: 1px solid #ddd;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-}
-
-.post-card-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.post-card-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.post-card-content {
-  padding: 1rem;
-}
-
-.post-card-date,
-.post-single-date {
-  font-size: 0.95rem;
-  opacity: 0.7;
-  margin-bottom: 0.75rem;
-}
-
-.post-card-title {
-  margin: 0 0 0.75rem;
-  font-size: 1.35rem;
-}
-
-.post-card-summary {
-  margin: 0 0 1rem;
-  line-height: 1.6;
-}
-
-.post-card-readmore {
-  font-weight: 600;
-}
-
-.post-single {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 0 4rem;
-}
-
-.post-single h1 {
-  margin-bottom: 1rem;
-}
-
-.post-single-image {
-  width: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin: 1rem 0 2rem;
-  display: block;
-}
-
-.post-single p {
-  line-height: 1.8;
-  margin-bottom: 1.25rem;
-}
-
-.posts-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
 }
