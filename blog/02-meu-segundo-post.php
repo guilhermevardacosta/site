@@ -6,7 +6,7 @@
 
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Meu primeiro post</title>
+		<title>Meu segundo post</title>
 		<meta name="description" content="Artigos sobre livros de fantasia, literatura e reflexões.">
 		<link rel="icon" href="../assets/img/favicon.ico">
 		<link rel="stylesheet" href="../assets/css/style.css">
@@ -15,9 +15,9 @@
 
 	<body>
 
-		<div id="header"></div>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . '/components/header.php'; ?>
 
-		<main class="container">
+		<main>
 
     		<article class="post-single">
 
@@ -25,7 +25,7 @@
       			
 				<h1>Meu segundo post</h1>
 
-      			<img class="post-single-image" src="../assets/img/2.jpg" alt="Imagem de capa do primeiro post">
+      			<img class="post-single-image" src="/assets/img/2.jpg" alt="Imagem de capa do segundo post">
 
       			<p>Este é um exemplo de postagem individual. Aqui entra o texto completo do artigo, com quantos parágrafos você quiser.</p>
       			<p>Você pode usar essa estrutura para publicar textos sobre livros, fantasia, escrita, leituras em andamento e qualquer outro tema do seu site.</p>
@@ -35,10 +35,7 @@
 			
   		</main>
 
-		<div id="footer"></div>
-
-		<script src="../assets/js/components.js"></script>
-		<script src="../assets/js/blog.js"></script>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'; ?>
 
 	</body>
 
