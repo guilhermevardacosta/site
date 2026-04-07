@@ -1,0 +1,10 @@
+[
+  {
+    "titulo": "Meu primeiro post",
+    "data": "2026-04-07",
+    "resumo": "Este é o primeiro texto do blog, com uma breve apresentação da proposta do site e dos temas que serão abordados.",
+    "imagem": "/images/posts/capa-primeiro-post.jpg",
+    "link": "/blog/meu-primeiro-post.html",
+    "alt": "Imagem de capa do primeiro post"
+  }
+]
