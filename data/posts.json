@@ -3,8 +3,8 @@
     "titulo": "Meu primeiro post",
     "data": "2026-04-07",
     "resumo": "Este é o primeiro texto do blog, com uma breve apresentação da proposta do site e dos temas que serão abordados.",
-    "imagem": "../assets/img/1.jpg",
-    "link": "/blog/meu-primeiro-post.html",
+    "imagem": "/assets/img/1.jpg",
+    "link": "/blog/01-meu-primeiro-post.html",
     "alt": "Imagem de capa do primeiro post"
   }
 ]
