@@ -4,7 +4,7 @@
 
     <nav>
 
-        <a href="/politica-de-privacidade.html">Política de Privacidade</a>
+        <a href="/politica-de-privacidade">Política de Privacidade</a>
         <a href="/termos-de-uso">Termos de Uso</a>
 
     </nav>

@@ -15,7 +15,7 @@
 
 	<body>
 
-		<div id="header"></div>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . '/components/header.php'; ?>
 
 		<main>
 
@@ -26,9 +26,7 @@
 
 		</main>
 
-		<div id="footer"></div>
-		
-		<script src="assets/js/components.js"></script>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'; ?>		
 
 	</body>
 
