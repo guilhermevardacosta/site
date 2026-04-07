@@ -526,3 +526,36 @@ main ol + h3 {
         animation: none !important;
     }
 }
+
+.home-latest-posts {
+    margin-top: 2.5rem;
+}
+
+.home-section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.8rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.home-section-heading h3 {
+    margin: 0;
+}
+
+.home-section-link {
+    font-size: 0.95rem;
+    color: var(--accent);
+}
+
+.home-section-link:hover {
+    color: var(--accent-2);
+}
+
+@media (max-width: 700px) {
+    .home-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
