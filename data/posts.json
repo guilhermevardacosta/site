@@ -6,5 +6,21 @@
     "imagem": "/assets/img/1.jpg",
     "link": "/blog/01-meu-primeiro-post.html",
     "alt": "Imagem de capa do primeiro post"
+  },
+{
+    "titulo": "Meu segundo post",
+    "data": "2026-04-07",
+    "resumo": "Este é o primeiro texto do blog, com uma breve apresentação da proposta do site e dos temas que serão abordados.",
+    "imagem": "/assets/img/2.jpg",
+    "link": "/blog/02-meu-segundo-post.html",
+    "alt": "Imagem de capa do primeiro post"
   }
+
+
+
+
+
+
+
+
 ]
