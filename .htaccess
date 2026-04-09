@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Esconde .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Redireciona URLs com .html para sem .html
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
