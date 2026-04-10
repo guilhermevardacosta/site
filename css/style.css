@@ -1,7 +1,10 @@
 body {
   background-color: blanchedalmond;
+  width: 800px;
+  margin: 0 auto;
 }
 
 .ibagens {
   width: 500px;
 }
+
