@@ -2,29 +2,12 @@
   const COOKIE_CONSENT_KEY = "cookie_consent_status";
   const ADSENSE_CLIENT = "ca-pub-7902987740979369";
 
-  const banner = document.getElementById("cookie-banner");
-  const acceptButton = document.getElementById("cookie-accept");
-  const rejectButton = document.getElementById("cookie-reject");
-  const manageButton = document.getElementById("manage-cookies");
-
   function getConsentStatus() {
     return localStorage.getItem(COOKIE_CONSENT_KEY);
   }
 
   function setConsentStatus(status) {
     localStorage.setItem(COOKIE_CONSENT_KEY, status);
-  }
-
-  function hideBanner() {
-    if (banner) {
-      banner.hidden = true;
-    }
-  }
-
-  function showBanner() {
-    if (banner) {
-      banner.hidden = false;
-    }
   }
 
   function loadAdSense() {
@@ -41,24 +24,51 @@
     document.head.appendChild(script);
   }
 
-  function acceptCookies() {
-    setConsentStatus("accepted");
-    loadAdSense();
-    hideBanner();
-  }
+  function initCookies() {
+    const banner = document.getElementById("cookie-banner");
+    const acceptButton = document.getElementById("cookie-accept");
+    const rejectButton = document.getElementById("cookie-reject");
+    const manageButton = document.getElementById("manage-cookies");
 
-  function rejectCookies() {
-    setConsentStatus("rejected");
-    hideBanner();
-  }
+    if (!banner) return;
 
-  function manageCookies() {
-    localStorage.removeItem(COOKIE_CONSENT_KEY);
-    showBanner();
-  }
+    function hideBanner() {
+      banner.hidden = true;
+    }
 
-  function init() {
+    function showBanner() {
+      banner.hidden = false;
+    }
+
+    function acceptCookies() {
+      setConsentStatus("accepted");
+      loadAdSense();
+      hideBanner();
+    }
+
+    function rejectCookies() {
+      setConsentStatus("rejected");
+      hideBanner();
+    }
+
+    function manageCookies() {
+      localStorage.removeItem(COOKIE_CONSENT_KEY);
+      showBanner();
+    }
+
     const consent = getConsentStatus();
+
+    if (acceptButton) {
+      acceptButton.addEventListener("click", acceptCookies);
+    }
+
+    if (rejectButton) {
+      rejectButton.addEventListener("click", rejectCookies);
+    }
+
+    if (manageButton) {
+      manageButton.addEventListener("click", manageCookies);
+    }
 
     if (consent === "accepted") {
       loadAdSense();
@@ -74,17 +84,5 @@
     showBanner();
   }
 
-  if (acceptButton) {
-    acceptButton.addEventListener("click", acceptCookies);
-  }
-
-  if (rejectButton) {
-    rejectButton.addEventListener("click", rejectCookies);
-  }
-
-  if (manageButton) {
-    manageButton.addEventListener("click", manageCookies);
-  }
-
-  document.addEventListener("DOMContentLoaded", init);
+  document.addEventListener("componentsLoaded", initCookies);
 })();
