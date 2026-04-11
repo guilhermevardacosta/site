@@ -1,10 +1,8 @@
 /* === Valores === */
 
 :root {
-    --fontezinha-primaria: "STIX Two Text", serif;
-
+  	--fontezinha-primaria: "STIX Two Text", serif;
 	--cor-de-fundo:#eed2a9;
-
 }
 
 /* === Estilos globais === */
