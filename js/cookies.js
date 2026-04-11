@@ -5,6 +5,7 @@
   const banner = document.getElementById("cookie-banner");
   const acceptButton = document.getElementById("cookie-accept");
   const rejectButton = document.getElementById("cookie-reject");
+  const manageButton = document.getElementById("manage-cookies");
 
   function getConsentStatus() {
     return localStorage.getItem(COOKIE_CONSENT_KEY);
@@ -51,6 +52,11 @@
     hideBanner();
   }
 
+  function manageCookies() {
+    localStorage.removeItem(COOKIE_CONSENT_KEY);
+    showBanner();
+  }
+
   function init() {
     const consent = getConsentStatus();
 
@@ -76,14 +82,9 @@
     rejectButton.addEventListener("click", rejectCookies);
   }
 
+  if (manageButton) {
+    manageButton.addEventListener("click", manageCookies);
+  }
+
   document.addEventListener("DOMContentLoaded", init);
 })();
-
-const manageButton = document.getElementById("manage-cookies");
-
-if (manageButton) {
-  manageButton.addEventListener("click", function () {
-    localStorage.removeItem(COOKIE_CONSENT_KEY);
-    showBanner();
-  });
-}
