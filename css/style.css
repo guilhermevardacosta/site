@@ -7,10 +7,16 @@
 
 /* === Estilos globais === */
 
+html {
+	scroll-behavior:smooth;
+}
+
 body {
 	background-color: var(--cor-de-fundo);
 	font-family: var(--fontezinha-primaria);
 	font-size: 130%;
+	-webkit-font-smoothing:antialiased;
+  	text-rendering:optimizeLegibility;
 }
 
 .container {
