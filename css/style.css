@@ -1,8 +1,10 @@
 /* === Valores === */
 
 :root {
-  	--fontezinha-primaria: "STIX Two Text", serif;
+	--fontezinha-primaria: "STIX Two Text", serif;
+	
 	--cor-de-fundo:#eed2a9;
+	--sombras:#666666;
 }
 
 /* === Estilos globais === */
@@ -32,6 +34,7 @@ p {
 img {
 	max-width: 400px;
 	width: 100%;
+  	box-shadow: 4px 4px 6px 0px var(--sombras);
 }
 
 
@@ -104,6 +107,7 @@ img {
   border-radius: 12px;
   padding: 1rem;
   background: #f7ecdb;
+  box-shadow: 4px 4px 6px 0px var(--sombras);
 }
 
 .livro img {
