@@ -16,11 +16,15 @@ body {
 	font-family: var(--fontezinha-primaria);
 	font-size: 130%;
 	-webkit-font-smoothing:antialiased;
-  	text-rendering:optimizeLegibility;
+  text-rendering:optimizeLegibility;  
+}
+
+p {
+  text-align: justify;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     width: 90%;
     margin: 0 auto;
 }
@@ -37,6 +41,95 @@ img {
 
 
 
+/* === Hoverzinho escondido === */
+
+.hoverzinho {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.preview {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background: #000000;
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 100;
+}
+
+.preview img {
+  width: 300px;
+  border-radius: 6px;
+  display: block;
+}
+
+.hoverzinho:hover .preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+/* === Capinhas === */
+
+.subgenero {
+  margin: 3rem 0;
+}
+
+.subgenero h2 {
+  margin-bottom: 0.75rem;
+}
+
+.subgenero > p {
+  margin-bottom: 1.5rem;
+  max-width: 70ch;
+}
+
+.grade-livros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.livro {
+  border: 1px solid #64554c;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #f7ecdb;
+}
+
+.livro img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.livro h3 {
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+}
+
+.autor {
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+  color: #555;
+}
+
+.motivo {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
 
 
 
