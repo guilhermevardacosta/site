@@ -175,3 +175,13 @@
     padding: 1.8rem;
   }
 }
+
+@media (max-width: 43rem) {
+  .pagina-interna {
+    padding: 3rem 0 6rem;
+  }
+
+  .pagina-conteudo h2 {
+    font-size: 2.6rem;
+  }
+}

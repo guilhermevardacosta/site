@@ -422,3 +422,60 @@ img {
   background-color: rgba(176, 138, 72, 0.08);
   border-color: var(--gold);
 }
+
+/* ----------------------- Páginas internas ----------------------- */
+
+.pagina-interna {
+  padding: 4rem 0 8rem;
+}
+
+.pagina-topo {
+  margin: 0 auto 4rem;
+  max-width: 72rem;
+  text-align: center;
+}
+
+.pagina-titulo {
+  margin-bottom: 1.6rem;
+}
+
+.pagina-intro {
+  max-width: 60ch;
+  margin: 0 auto;
+  color: var(--ink-soft);
+}
+
+.pagina-conteudo {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.pagina-conteudo h2 {
+  margin-top: 4rem;
+  margin-bottom: 1.6rem;
+  font-size: 3rem;
+}
+
+.pagina-conteudo p + p {
+  margin-top: 1.6rem;
+}
+
+.pagina-email {
+  margin-top: 2rem;
+  font-size: 2.2rem;
+}
+
+.lista-interna {
+  margin-top: 1.6rem;
+  padding-left: 2.4rem;
+  list-style: disc;
+}
+
+.lista-interna li {
+  font-size: var(--p);
+  color: var(--ink-soft);
+}
+
+.lista-interna li + li {
+  margin-top: 0.8rem;
+}
