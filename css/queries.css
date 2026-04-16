@@ -1,90 +1,128 @@
-/* LG - SMALL LAPTOPS: 1024px - 1280px */
+/* ----------------------- Telas menores que 1152px ----------------------- */
 
 @media (max-width: 72rem) {
-    /* 1150px / 16px = 72rem */
-    /* 72rem x 16px = 1152px */
+  html {
+    font-size: 56.25%;
+  }
 
-    html {
-        font-size: 56.25%;
-        /* 9px / 16px = 56.25% */
-    }
-
-    .features-grid-container {
-        column-gap: 2rem;
-    }
-
-    .cta-section {
-        margin-bottom: 20rem;
-    }
+  .containerzao {
+    width: 92%;
+  }
 }
 
-/* MD - TABLETS: 768px - 1024px */
+/* ----------------------- Telas menores que 816px ----------------------- */
 
 @media (max-width: 51rem) {
-    /* 815px / 16px = 51rem */
-    /* 51rem x 16px = 816px */
+  html {
+    font-size: 50%;
+  }
 
-    html {
-        font-size: 50%;
-        /* 8px / 16px = 50% */
-    }
+  .nav-do-header {
+    height: auto;
+    padding: 2rem 0;
+    justify-content: center;
+  }
+
+  .links-do-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .corpinho {
+    min-height: auto;
+    padding: 8rem 0;
+  }
+
+  .corpinho-p {
+    max-width: 60ch;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .conteinerzinho-do-footer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
-/* SM - PHONE LANDSCAPE: 576px - 768px */
+/* ----------------------- Telas menores que 688px ----------------------- */
 
 @media (max-width: 43rem) {
-    /* 680px / 16px = 43rem */
-    /* 43rem x 16px = 688px */
+  html {
+    font-size: 43.75%;
+  }
 
-    html {
-        font-size: 43.75%;
-        /* 7px / 16px = 43.75% */
-    }
+  .links-do-header {
+    gap: 1.2rem;
+  }
 
-    .cta-card {
-        padding: 8rem 16rem;
-    }
+  .botao {
+    padding: 1.2rem 2rem;
+  }
 
-    .features-section {
-        margin-bottom: 20rem;
-    }
+  .corpinho {
+    padding: 6rem 0;
+  }
 
-    .features-grid-container {
-        row-gap: 5rem;
-        column-gap: 0.5rem;
-    }
+  .corpinho-titulo {
+    margin-bottom: 2rem;
+  }
+
+  .corpinho-p {
+    max-width: 48ch;
+    margin-bottom: 2.4rem;
+    text-align: center;
+  }
+
+  .conteinerzinho-do-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
 }
 
-/* XS - PHONE PORTRAINT:  < 576px */
+/* ----------------------- Telas menores que 544px ----------------------- */
 
 @media (max-width: 34rem) {
-    /* 530px / 16px = 34rem */
-    /* 34rem x 16px = 544px */
+  html {
+    font-size: 37.5%;
+  }
 
-    html {
-        font-size: 37.5%;
-        /* 6px / 16px = 37.5% */
-    }
+  .containerzao {
+    width: 94%;
+  }
 
-    .hero-heading-break {
-        display: none;
-    }
+  .nav-do-header {
+    padding: 1.6rem 0;
+  }
 
-    .hero-section {
-        height: auto;
-    }
+  .links-do-header {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
 
-    .features-grid-container {
-        grid-template-columns: 1fr;
-    }
+  .links-do-header li {
+    width: 100%;
+  }
 
-    .feature-img-swap-order {
-        grid-row: auto;
-        grid-column: auto; 
-    }
+  .botao {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 
-    .cta-card {
-        padding: 8rem 6rem;
-    }
+  .corpinho {
+    padding: 5rem 0;
+  }
+
+  .corpinho-p {
+    max-width: 100%;
+  }
+
+  .footer {
+    gap: 1.6rem;
+  }
 }
-
