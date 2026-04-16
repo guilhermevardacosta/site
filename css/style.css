@@ -1,10 +1,59 @@
-/* === Valores === */
+/* ----------------------- Variáveis ----------------------- */
 
 :root {
-	--fontezinha: "STIX Two Text", serif;
+	
+	/* Tamanho das fontes */
+    --pequeneninho: 1.2rem;
+    --texto-base: 1.6rem;
+    --p: 2rem;
+    --h5: 2.4rem;
+    --h4: 3.2rem;
+    --h3: 4rem;
+    --h2: 4.8rem;
+    --h1: 6.2rem;
 
-	--corzinha-fundo: #eed2a9;
+	/* Grossurinha das fontes */
+    --normalzona: 400;
+    --pesadao: 700;
 
+	/* Altura das linhas */
+    --baixinha: 1.2;
+    --altinha: 1.5;
+
+    /* Espaçamento das letrinhas */
+    --juntinha: -2px;
+  
+	/* Fontezinha muito louca */
+	--fontezinha: "STIX Two Text", sans-serif;
+
+	/* Cores */
+    --primary-base: #339af0;
+    --primary-tint: #d0ebff;
+    --primary-shade: #1c7ed6;
+    --secondary-base: #9775fa;
+    --secondary-tint: #e5dbff;
+    --secondary-shade: #7048e8;
+    --tertiary-base: #ff922b;
+    --tertiary-tint: #ffe8cc;
+    --tertiary-shade: #f76707;
+    --grey-base: #495057;
+    --grey-tint: #f1f3f5;
+    --grey-shade: #212529;
+    --white: #ffffff;
+    --black: #000000; 
+
+	--corzinha-fundo: #ebcba2;
+	
+	/* Barrinha de header */
+	--nav-altura: 100px;
+}
+
+/* ----------------------- Estilos para todos ----------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -13,29 +62,162 @@ html {
 }
 
 body {
-	background-color: var(--corzinha-fundo);  
-  	font-family: var(--fontezinha);  
+	background-color: var(--corzinha-fundo);
+  	font-family: var(--fontezinha);	
+    font-weight: var(--normalzona);
+    line-height: var(--altinha);
 }
 
-.container {
+.containerzao {
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
 }
 
-h1, h2, h3 {
-	font-weight: 700;
+h1, h2, h3, h4, h5 {
+	font-weight: var(--pesadao);
+    line-height: var(--baixinha);
+    letter-spacing: var(--juntinha);
+}
+
+h1 {
+	font-size: var(--h1);
+}
+
+h2 {
+	font-size: var(--h2);
+}
+
+h3 {
+	font-size: var(--h3);
+}
+
+h4 {
+	font-size: var(--h4);
+}
+
+h5 {
+	font-size: var(--h5);
 }
 
 p {
-	font-weight: 400;
-} 
+	font-size: var(--p);
+}
 
 a {
-	font-weight: 400;
 	text-decoration: none;
+    font-size: var(--texto-base);
+    display: inline-block;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: var(--grey-base);
 }
 
 ul {
 	list-style: none;
+}
+
+span {
+    display: inline-block;
+}
+
+.textinho-pequeno {
+    font-size: var(--pequeneninho);
+}
+
+/* ----------------------- Componentes ----------------------- */
+
+.botao {
+	font-size: var(--texto-base);
+    text-decoration: none;
+    padding: 1.5rem 3rem;
+    border-radius: 8px;
+
+}
+
+.botao-um:link, .botao-um:visited {
+	color: var(--white);
+    background-color: var(--primary-base);
+    border: 2px solid var(--primary-base);
+    transition: 0.5s;
+}
+
+.botao-um:hover, .botao-um:active {
+	color: var(--white);
+    background-color: var(--primary-shade);
+    border: 2px solid var(--primary-shade);
+    transform: scale(1.05, 1.05);
+    box-shadow: 0px 3px 6px var(--grey-base);
+}
+
+.botao-um-outline:link, .botao-um-outline:visited {
+    color: var(--primary-base);
+    background-color: var(--white);
+    border: 2px solid var(--primary-base);
+    transition: 0.5s;
+}
+
+.botao-um-outline:hover, .botao-um-outline:active {
+    color: var(--primary-shade);
+    background-color: var(--white);
+    border: 2px solid var(--primary-shade);
+    transform: scale(1.05, 1.05);
+    box-shadow: 0px 3px 6px var(--grey-base);
+}
+
+/* ----------------------- Headerzinho ----------------------- */
+
+.nav-do-header {
+    height: var(--nav-altura);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-do-header {
+    display: flex;
+    gap: 2rem;
+}
+
+/* ----------------------- Corpinho dos posts ----------------------- */
+
+.corpinho {
+    height: calc(100vh - var(--nav-altura));
+    min-height: 400px;
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.corpinho-titulo {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.corpinho-p {
+    margin-bottom: 5rem;
+    text-align: justify;
+}
+
+.pezinho-grande::first-letter {
+	text-transform: uppercase;
+	font-size: var(--h1);
+	font-weight: var(--pesadao);
+}
+
+/* ----------------------- Footerzinho ----------------------- */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.conteinerzinho-do-footer {
+    display: flex;
+    gap: 1rem;
 }
