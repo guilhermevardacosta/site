@@ -305,3 +305,120 @@ img {
   background-color: rgba(176, 138, 72, 0.22);
   color: var(--ink);
 }
+
+/* ----------------------- Marca do site ----------------------- */
+
+.site-header {
+  position: relative;
+}
+
+.nav-do-header {
+  gap: 3rem;
+}
+
+.marca-do-site {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--ink);
+}
+
+.marca-do-site:hover,
+.marca-do-site:active {
+  color: var(--ink);
+  transform: none;
+}
+
+.marca-do-site__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 3rem;
+  font-weight: var(--semipesada);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.marca-do-site__subtitulo {
+  font-size: 1.3rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+/* ----------------------- Footer extra ----------------------- */
+
+.footer-descricao {
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* ----------------------- Cookies ----------------------- */
+
+.cookie-banner {
+  position: fixed;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.cookie-banner__content {
+  width: min(100%, 72rem);
+  padding: 2rem 2.2rem;
+  border: 1px solid rgba(183, 154, 106, 0.65);
+  border-radius: 1.2rem;
+  background: linear-gradient(to bottom, #f7eddc, #efe0c4);
+  box-shadow: 0 1.2rem 3rem rgba(45, 33, 23, 0.18);
+}
+
+.cookie-banner__title {
+  margin-bottom: 0.8rem;
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  color: var(--ink);
+}
+
+.cookie-banner__text {
+  margin-bottom: 1.6rem;
+  color: var(--ink-soft);
+  font-size: 1.6rem;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cookie-btn {
+  padding: 1.1rem 1.8rem;
+  border-radius: 0.8rem;
+  border: 2px solid transparent;
+  font: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cookie-btn--primary {
+  color: var(--white);
+  background: linear-gradient(to bottom, #7b463b, var(--wine));
+  border-color: var(--wine-dark);
+}
+
+.cookie-btn--primary:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.8rem 1.6rem var(--shadow);
+}
+
+.cookie-btn--secondary {
+  color: var(--wine);
+  background-color: transparent;
+  border-color: var(--borda);
+}
+
+.cookie-btn--secondary:hover {
+  background-color: rgba(176, 138, 72, 0.08);
+  border-color: var(--gold);
+}
