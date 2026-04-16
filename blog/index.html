@@ -1,54 +1,105 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
-    <head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blog - Guilherme Vardacosta</title>
+	<title>Blog | Guilherme Vardacosta</title>
+	<meta name="description"
+		content="Leia os artigos e postagens de Guilherme Vardacosta sobre fantasia, leituras, resenhas, Tolkien e a construção de uma biblioteca fantástica.">
+	<meta name="author" content="Guilherme Vardacosta">
+	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#f3e7d0">
+	<link rel="canonical" href="https://guilhermevardacosta.com.br/blog">
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:title" content="Blog | Guilherme Vardacosta">
+	<meta property="og:description"
+		content="Artigos e postagens sobre fantasia, leituras, resenhas e literatura fantástica.">
+	<meta property="og:url" content="https://guilhermevardacosta.com.br/blog">
+	<meta property="og:site_name" content="Guilherme Vardacosta">
+	<meta property="og:image" content="https://guilhermevardacosta.com.br/img/og-image.jpg">
 
-		<link rel="stylesheet" href="../css/style.css">
-		<link rel="icon" href="../img/favicon.ico">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Blog | Guilherme Vardacosta">
+	<meta name="twitter:description"
+		content="Artigos e postagens sobre fantasia, leituras, resenhas e literatura fantástica.">
+	<meta name="twitter:image" content="https://guilhermevardacosta.com.br/img/og-image.jpg">
 
-    </head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap"
+		rel="stylesheet">
 
-    <body>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/queries.css">
+	<link rel="icon" href="/img/favicon.ico">
+</head>
 
-		<div class="container">
+<body>
+	<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-			<div id="site-header"></div>
+	<div class="containerzao">
+		<div id="site-header"></div>
 
-			<main>
-				
-				<h1>Blog</h1>
+		<main id="conteudo" class="pagina-interna">
+			<section class="pagina-topo">
+				<p class="sobretitulo">Arquivo de textos</p>
+				<h1 class="pagina-titulo">Blog</h1>
+				<p class="pagina-intro">
+					Aqui reúno artigos, reflexões e registros de leitura sobre fantasia, autores, livros e a construção
+					da minha biblioteca.
+				</p>
+			</section>
 
-				<p>Últimas postagens</p>
+			<section class="pagina-conteudo">
+				<ul class="lista-posts" role="list">
+					<li>
+						<article class="card-post">
+							<p class="card-post__meta">
+								<time datetime="2026-04-10">10 de abril de 2026</time>
+							</p>
+							<h2 class="card-post__titulo">
+								<a href="/blog/o-inicio-de-tudo">O início de tudo</a>
+							</h2>
+							<p class="card-post__resumo">
+								Um texto de apresentação sobre minha volta à leitura, o começo do site e a ideia de
+								registrar tudo em um espaço próprio na internet.
+							</p>
+							<a class="card-post__link" href="/blog/o-inicio-de-tudo">Ler postagem</a>
+						</article>
+					</li>
 
-				<ul>
-
-					<li><a href="/blog/o-inicio-de-tudo.html">O início de tudo</a></li>
-					<li><a href="/blog/o-que-e-fantasia">O que é Fantasia? Entendendo o gênero e alguns dos seus subgêneros</a></li>
-
+					<li>
+						<article class="card-post">
+							<p class="card-post__meta">
+								<time datetime="2026-04-13">13 de abril de 2026</time>
+							</p>
+							<h2 class="card-post__titulo">
+								<a href="/blog/o-que-e-fantasia">O que é fantasia? Entendendo o gênero e alguns dos seus
+									subgêneros</a>
+							</h2>
+							<p class="card-post__resumo">
+								Um guia introdutório para entender o gênero fantasia, sua base proto-fantástica e alguns
+								dos seus subgêneros mais conhecidos.
+							</p>
+							<a class="card-post__link" href="/blog/o-que-e-fantasia">Ler postagem</a>
+						</article>
+					</li>
 				</ul>
+			</section>
+		</main>
 
-			</main>
+		<div id="site-footer"></div>
+	</div>
 
-			<div id="site-footer"></div>
+	<div id="site-cookies"></div>
 
-		</div>
-
-		<div id="site-cookies"></div>
-
-		</div>
-
-		<script src="/js/components.js"></script>
-		<script src="/js/cookies.js"></script>
-        
-    </body>
+	<script src="/js/components.js" defer></script>
+	<script src="/js/cookies.js" defer></script>
+</body>
 
 </html>

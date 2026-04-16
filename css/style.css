@@ -51,9 +51,16 @@
 }
 
 body,
-h1, h2, h3, h4, h5,
+h1,
+h2,
+h3,
+h4,
+h5,
 p,
-ul {
+ul,
+ol,
+figure,
+blockquote {
   margin: 0;
   padding: 0;
 }
@@ -92,13 +99,28 @@ h5 {
   letter-spacing: var(--juntinha);
 }
 
-h1 { font-size: var(--h1); }
-h2 { font-size: var(--h2); }
-h3 { font-size: var(--h3); }
-h4 { font-size: var(--h4); }
-h5 { font-size: var(--h5); }
+h1 {
+  font-size: var(--h1);
+}
 
-p {
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+p,
+li {
   font-size: var(--p);
 }
 
@@ -107,7 +129,13 @@ a {
   color: var(--wine);
   font-size: var(--texto-base);
   text-decoration: none;
-  transition: color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.25s ease;
 }
 
 a:link,
@@ -139,6 +167,11 @@ img {
 
 .textinho-pequeno {
   font-size: var(--pequeneninho);
+}
+
+::selection {
+  background-color: rgba(176, 138, 72, 0.22);
+  color: var(--ink);
 }
 
 /* ----------------------- Acessibilidade ----------------------- */
@@ -202,12 +235,45 @@ img {
 
 /* ----------------------- Header ----------------------- */
 
+.site-header {
+  position: relative;
+}
+
 .nav-do-header {
   min-height: var(--nav-altura);
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
   border-bottom: 1px solid rgba(183, 154, 106, 0.45);
+}
+
+.marca-do-site {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--ink);
+}
+
+.marca-do-site:hover,
+.marca-do-site:active {
+  color: var(--ink);
+  transform: none;
+}
+
+.marca-do-site__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 3rem;
+  font-weight: var(--semipesada);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.marca-do-site__subtitulo {
+  font-size: 1.3rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--forest);
 }
 
 .links-do-header {
@@ -217,7 +283,7 @@ img {
   justify-content: center;
 }
 
-/* ----------------------- Hero / conteúdo principal ----------------------- */
+/* ----------------------- Home / Hero ----------------------- */
 
 .corpinho {
   min-height: max(48rem, calc(100svh - var(--nav-altura)));
@@ -267,6 +333,286 @@ img {
   margin-top: 2rem;
 }
 
+/* ----------------------- Páginas internas ----------------------- */
+
+.pagina-interna {
+  padding: 4rem 0 8rem;
+}
+
+.pagina-topo {
+  margin: 0 auto 4rem;
+  max-width: 72rem;
+  text-align: center;
+}
+
+.pagina-titulo {
+  margin-bottom: 1.6rem;
+}
+
+.pagina-intro {
+  max-width: 60ch;
+  margin: 0 auto;
+  color: var(--ink-soft);
+}
+
+.pagina-conteudo {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.pagina-conteudo h2 {
+  margin-top: 4rem;
+  margin-bottom: 1.6rem;
+  font-size: 3rem;
+}
+
+.pagina-conteudo p+p {
+  margin-top: 1.6rem;
+}
+
+.pagina-email {
+  margin-top: 2rem;
+  font-size: 2.2rem;
+}
+
+.lista-interna {
+  margin-top: 1.6rem;
+  padding-left: 2.4rem;
+  list-style: disc;
+}
+
+.lista-interna li {
+  color: var(--ink-soft);
+}
+
+.lista-interna li+li {
+  margin-top: 0.8rem;
+}
+
+/* ----------------------- Blog / índice de posts ----------------------- */
+
+.lista-posts {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.card-post {
+  padding: 2.4rem;
+  border: 1px solid rgba(183, 154, 106, 0.45);
+  border-radius: 1.2rem;
+  background: rgba(255, 253, 248, 0.45);
+  box-shadow: 0 0.8rem 2rem rgba(45, 33, 23, 0.06);
+}
+
+.card-post__meta {
+  margin-bottom: 1rem;
+  color: var(--forest);
+  font-size: 1.5rem;
+}
+
+.card-post__titulo {
+  margin-bottom: 1.2rem;
+  font-size: 3rem;
+}
+
+.card-post__titulo a {
+  color: var(--ink);
+}
+
+.card-post__titulo a:hover {
+  color: var(--wine);
+}
+
+.card-post__resumo {
+  margin-bottom: 1.6rem;
+  color: var(--ink-soft);
+}
+
+.card-post__link {
+  color: var(--wine);
+  font-weight: var(--semipesada);
+}
+
+/* ----------------------- Postagens ----------------------- */
+
+.post {
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 4rem 0 8rem;
+}
+
+.post--texto {
+  max-width: 72rem;
+}
+
+.post-header {
+  margin-bottom: 3.2rem;
+  text-align: center;
+}
+
+.post-meta {
+  margin-bottom: 1.2rem;
+  color: var(--forest);
+  font-size: 1.5rem;
+}
+
+.post-titulo {
+  margin-bottom: 1.6rem;
+  text-wrap: balance;
+}
+
+.post-intro {
+  max-width: 60ch;
+  margin: 0 auto;
+  color: var(--ink-soft);
+}
+
+.post-conteudo p+p,
+.post-section p+p {
+  margin-top: 1.6rem;
+}
+
+.post-section {
+  margin-top: 4.8rem;
+}
+
+.post-section h2 {
+  margin-bottom: 1.6rem;
+  font-size: 3.4rem;
+}
+
+.post-section h3 {
+  margin-bottom: 1.2rem;
+  font-size: 2.8rem;
+}
+
+.lista-ordenada {
+  margin: 1.6rem 0 1.6rem 2.4rem;
+  padding-left: 1.2rem;
+}
+
+.lista-ordenada li {
+  color: var(--ink-soft);
+}
+
+.lista-ordenada li+li {
+  margin-top: 0.8rem;
+}
+
+.indice {
+  margin: 3.2rem 0 4rem;
+  padding: 2.4rem;
+  border: 1px solid rgba(183, 154, 106, 0.45);
+  border-radius: 1.2rem;
+  background: rgba(255, 253, 248, 0.5);
+}
+
+.indice__titulo {
+  margin-bottom: 1.4rem;
+  font-size: 2.6rem;
+}
+
+.indice ul {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.galeria-post {
+  margin: 3.2rem 0;
+}
+
+/* ----------------------- Grades de livros / cards ----------------------- */
+
+.subgenero {
+  margin-top: 3.2rem;
+}
+
+.subgenero__titulo {
+  margin-bottom: 1.6rem;
+}
+
+.grade-livros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.4rem;
+}
+
+.livro {
+  height: 100%;
+}
+
+.livro figure {
+  height: 100%;
+  padding: 1.8rem;
+  border: 1px solid rgba(183, 154, 106, 0.45);
+  border-radius: 1.2rem;
+  background: rgba(255, 253, 248, 0.45);
+  box-shadow: 0 0.8rem 2rem rgba(45, 33, 23, 0.06);
+}
+
+.book-cover {
+  width: 100%;
+  max-width: 26rem;
+  margin: 0 auto 1.6rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 0.8rem 1.6rem rgba(45, 33, 23, 0.12);
+}
+
+.livro h4 {
+  margin-bottom: 0.8rem;
+  font-size: 2.4rem;
+}
+
+.autor {
+  margin-bottom: 0.8rem;
+  color: var(--forest);
+  font-size: 1.6rem;
+}
+
+.motivo {
+  color: var(--ink-soft);
+  font-size: 1.7rem;
+}
+
+/* ----------------------- Preview ao passar mouse ----------------------- */
+
+.hoverzinho {
+  position: relative;
+  display: inline-block;
+  color: var(--wine);
+  cursor: pointer;
+}
+
+.preview {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 1.2rem);
+  transform: translateX(-50%);
+  width: 18rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(183, 154, 106, 0.65);
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, #f7eddc, #efe0c4);
+  box-shadow: 0 1.2rem 3rem rgba(45, 33, 23, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 30;
+}
+
+.preview img {
+  border-radius: 0.6rem;
+}
+
+.hoverzinho:hover .preview,
+.hoverzinho:focus .preview,
+.hoverzinho:focus-within .preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-0.2rem);
+}
+
 /* ----------------------- Footer ----------------------- */
 
 .footer {
@@ -277,6 +623,11 @@ img {
   gap: 1rem;
   border-top: 1px solid rgba(183, 154, 106, 0.45);
   color: var(--ink-soft);
+}
+
+.footer-descricao {
+  color: var(--ink-soft);
+  text-align: center;
 }
 
 .conteinerzinho-do-footer {
@@ -297,58 +648,6 @@ img {
   border: none;
   cursor: pointer;
   padding: 0;
-}
-
-/* ----------------------- Seleção de texto ----------------------- */
-
-::selection {
-  background-color: rgba(176, 138, 72, 0.22);
-  color: var(--ink);
-}
-
-/* ----------------------- Marca do site ----------------------- */
-
-.site-header {
-  position: relative;
-}
-
-.nav-do-header {
-  gap: 3rem;
-}
-
-.marca-do-site {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: var(--ink);
-}
-
-.marca-do-site:hover,
-.marca-do-site:active {
-  color: var(--ink);
-  transform: none;
-}
-
-.marca-do-site__titulo {
-  font-family: var(--fonte-titulo);
-  font-size: 3rem;
-  font-weight: var(--semipesada);
-  line-height: 1.1;
-  color: var(--ink);
-}
-
-.marca-do-site__subtitulo {
-  font-size: 1.3rem;
-  letter-spacing: 0.08rem;
-  text-transform: uppercase;
-  color: var(--forest);
-}
-
-/* ----------------------- Footer extra ----------------------- */
-
-.footer-descricao {
-  color: var(--ink-soft);
-  text-align: center;
 }
 
 /* ----------------------- Cookies ----------------------- */
@@ -398,7 +697,11 @@ img {
   font: inherit;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .cookie-btn--primary {
@@ -421,61 +724,4 @@ img {
 .cookie-btn--secondary:hover {
   background-color: rgba(176, 138, 72, 0.08);
   border-color: var(--gold);
-}
-
-/* ----------------------- Páginas internas ----------------------- */
-
-.pagina-interna {
-  padding: 4rem 0 8rem;
-}
-
-.pagina-topo {
-  margin: 0 auto 4rem;
-  max-width: 72rem;
-  text-align: center;
-}
-
-.pagina-titulo {
-  margin-bottom: 1.6rem;
-}
-
-.pagina-intro {
-  max-width: 60ch;
-  margin: 0 auto;
-  color: var(--ink-soft);
-}
-
-.pagina-conteudo {
-  max-width: 72rem;
-  margin: 0 auto;
-}
-
-.pagina-conteudo h2 {
-  margin-top: 4rem;
-  margin-bottom: 1.6rem;
-  font-size: 3rem;
-}
-
-.pagina-conteudo p + p {
-  margin-top: 1.6rem;
-}
-
-.pagina-email {
-  margin-top: 2rem;
-  font-size: 2.2rem;
-}
-
-.lista-interna {
-  margin-top: 1.6rem;
-  padding-left: 2.4rem;
-  list-style: disc;
-}
-
-.lista-interna li {
-  font-size: var(--p);
-  color: var(--ink-soft);
-}
-
-.lista-interna li + li {
-  margin-top: 0.8rem;
 }

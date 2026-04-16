@@ -12,6 +12,17 @@
   .nav-do-header {
     gap: 2rem;
   }
+
+  .corpinho-titulo {
+    max-width: 14ch;
+  }
+
+  .post,
+  .post--texto,
+  .pagina-conteudo,
+  .pagina-topo {
+    max-width: 72rem;
+  }
 }
 
 /* ----------------------- Telas menores que 816px ----------------------- */
@@ -45,12 +56,27 @@
     margin-bottom: 6rem;
   }
 
-  .corpinho-p {
+  .corpinho-p,
+  .pagina-intro,
+  .post-intro {
     max-width: 60ch;
   }
 
   .hero-acoes {
     margin-top: 2.4rem;
+  }
+
+  .pagina-interna {
+    padding: 3.5rem 0 7rem;
+  }
+
+  .post {
+    padding: 3.5rem 0 7rem;
+  }
+
+  .grade-livros {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 
   .footer {
@@ -90,11 +116,13 @@
 
   .corpinho-titulo {
     margin-bottom: 2rem;
+    max-width: 100%;
   }
 
-  .corpinho-p {
+  .corpinho-p,
+  .pagina-intro,
+  .post-intro {
     max-width: 48ch;
-    margin-bottom: 2.4rem;
   }
 
   .hero-acoes {
@@ -109,6 +137,50 @@
     text-align: center;
   }
 
+  .pagina-interna {
+    padding: 3rem 0 6rem;
+  }
+
+  .pagina-topo {
+    margin-bottom: 3rem;
+  }
+
+  .pagina-conteudo h2 {
+    font-size: 2.6rem;
+  }
+
+  .card-post {
+    padding: 2rem;
+  }
+
+  .card-post__titulo {
+    font-size: 2.6rem;
+  }
+
+  .post {
+    padding: 3rem 0 6rem;
+  }
+
+  .post-section h2 {
+    font-size: 3rem;
+  }
+
+  .post-section h3 {
+    font-size: 2.4rem;
+  }
+
+  .indice {
+    padding: 2rem;
+  }
+
+  .grade-livros {
+    grid-template-columns: 1fr;
+  }
+
+  .book-cover {
+    max-width: 22rem;
+  }
+
   .conteinerzinho-do-footer {
     flex-direction: column;
     align-items: center;
@@ -121,6 +193,10 @@
 
   .cookie-btn {
     width: 100%;
+  }
+
+  .preview {
+    width: 15rem;
   }
 }
 
@@ -163,8 +239,40 @@
     padding: 5rem 0;
   }
 
-  .corpinho-p {
+  .corpinho-p,
+  .pagina-intro,
+  .post-intro,
+  .pagina-conteudo,
+  .post {
     max-width: 100%;
+  }
+
+  .card-post {
+    padding: 1.8rem;
+  }
+
+  .card-post__titulo {
+    font-size: 2.4rem;
+  }
+
+  .post-section {
+    margin-top: 4rem;
+  }
+
+  .post-section h2 {
+    font-size: 2.8rem;
+  }
+
+  .post-section h3 {
+    font-size: 2.2rem;
+  }
+
+  .indice {
+    padding: 1.8rem;
+  }
+
+  .book-cover {
+    max-width: 20rem;
   }
 
   .footer {
@@ -174,14 +282,16 @@
   .cookie-banner__content {
     padding: 1.8rem;
   }
-}
 
-@media (max-width: 43rem) {
-  .pagina-interna {
-    padding: 3rem 0 6rem;
+  .preview {
+    width: 13rem;
+    left: 0;
+    transform: translateX(0);
   }
 
-  .pagina-conteudo h2 {
-    font-size: 2.6rem;
+  .hoverzinho:hover .preview,
+  .hoverzinho:focus .preview,
+  .hoverzinho:focus-within .preview {
+    transform: translateY(-0.2rem);
   }
 }
