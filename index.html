@@ -6,70 +6,42 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Guilherme Vardacosta | Desenvolvedor Web</title>
-        <meta name="description" content="Desenvolvedor Web especializado na criação de sites modernos e responsivos para empresas e negócios locais.">
-            
+        <title>Guilherme Vardacosta | Sites Profissionais para Negócios Locais</title>
+        <meta name="description" content="Criação de sites modernos, rápidos e focados em atrair clientes para pequenas empresas, profissionais autônomos e prestadores de serviços.">
+    
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        
+    
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/queries.css">
-
         <link rel="icon" href="img/favicon.png">
 
     </head>
 
-    <body>
-
+    <body class="light-theme">
+        
         <header id="header">
 
             <nav class="container">
 
                 <a href="#" class="logo">Guilherme Vardacosta</a>
-
+                
                 <ul class="menu">
 
-                    <li><a href="#sobre">Sobre mim</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#solucoes">O que fazemos</a></li>
+                    <li><a href="#beneficios">Por que ter um site</a></li>
+                    <li><a href="#modelos">Modelos</a></li>
+                    <li><a href="#contato" class="nav-cta">Fale Comigo</a></li>
 
                 </ul>
 
-                <button id="theme-toggle">
+                <button id="theme-toggle" aria-label="Alternar tema visual">
 
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-
-                    </svg>
-
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-
-                    </svg>
+                    <i class="fas fa-moon"></i>
 
                 </button>
-
-                <div class="social-links-header" role="group" aria-label="Links para redes sociais no cabeçalho">
-
-                    <a href="https://api.whatsapp.com/send?phone=5553991079395" target="_blank" aria-label="WhatsApp" title="Chamar no Whatsapp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:contato@guilhermevardacosta.com.br" target="_blank" aria-label="Email" title="Mandar E-mail"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                    <a href="https://github.com/guilhermevardacosta" target="_blank" aria-label="GitHub" title="Alguns dos meus projetos no Github"><i class="fab fa-github"></i></a>
-
-                </div>
 
             </nav>
 
@@ -83,183 +55,226 @@
 
                     <div class="hero-text">
 
-                        <h1>Crio sites modernos e profissionais para empresas</h1>
-                        <p>Dê ao seu negócio a presença digital que ele merece e atraia mais clientes.</p>
-                        <a href="#contato" class="btn">Peça seu orçamento</a>
+                        <h1>Sua empresa fora das redes sociais e dentro do Google</h1>
+                        <p>Transforme seguidores em clientes reais. Crio sites rápidos, modernos e totalmente otimizados para celulares, desenhados especificamente para destacar o seu negócio e gerar novos contatos diariamente.</p>
 
-                    </div>                    
+                        <div class="hero-buttons">
 
-                </div>
+                            <a href="#contato" class="btn btn-primary">Quero um site para o meu negócio</a>
+                            <a href="#modelos" class="btn btn-secondary">Ver modelos prontos</a>
 
-            </section>
-
-            <section id="sobre" class="section-hidden">
-
-                <div class="container">
-
-                    <h2>Sobre Mim</h2>
-
-                    <p>Sou desenvolvedor frontend apaixonado por criar experiências digitais incríveis. Minha missão é ajudar pequenas empresas e negócios locais a prosperarem no mundo online, construindo sites que não são apenas bonitos, mas também funcionais e que geram resultados. Com experiência em tecnologias modernas, transformo suas ideias em uma presença digital de sucesso.</p>
-
-                    <div class="social-links-about" role="group" aria-label="Links para redes sociais na seção Sobre Mim">
-
-                        <a href="https://github.com/guivardacosta" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/guivardacosta" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://instagram.com/guivardacosta" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com/br.guivardacosta" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-
-                    </div>
-
-                </div>
-
-                <div class="hero-image-container">
-
-                        <img src="img/foto-perfil-escura1.png" alt="Gui Vardacosta, foto de perfil no tema escuro, olhando para frente." class="hero-img-front active" data-theme="dark">
-                        <img src="img/foto-perfil-escura2.png" alt="Gui Vardacosta, foto de perfil no tema escuro, olhando para o lado." class="hero-img-side" data-theme="dark">
-                        <img src="img/foto-perfil-clara1.png" alt="Gui Vardacosta de óculos, foto de perfil no tema claro, olhando para frente." class="hero-img-front" data-theme="light">
-                        <img src="img/foto-perfil-clara2.png" alt="Gui Vardacosta de óculos, foto de perfil no tema claro, olhando para o lado." class="hero-img-side" data-theme="light">
-
-                    </div>
-
-            </section>
-
-            <section id="servicos" class="section-hidden">
-                <div class="container">
-                    <h2>Serviços</h2>
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <div class="icon-wrapper">
-                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="15" rx="2" ry="2"></rect>
-                                    <line x1="2" y1="18" x2="22" y2="18"></line>
-                                    <line x1="12" y1="22" x2="12" y2="18"></line>
-                                </svg>
-                            </div>
-                            <h3>Criação de Sites Responsivos</h3>
-                            <p>Sites que funcionam perfeitamente em qualquer dispositivo, do celular ao desktop.</p>
                         </div>
 
-                        <div class="service-card">
-                            <div class="icon-wrapper">
-                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5A5.5 5.5 0 0 1 7.5 3c1.74 0 3.41.81 4.5 2.09A5.5 5.5 0 0 1 12 5.09c1.09-1.28 2.76-2.09 4.5-2.09A5.5 5.5 0 0 1 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
-                                </svg>
+                    </div>
+
+                    <div class="hero-image-container">
+
+                        <img src="img/perfil-claro-frente.png" alt="Foto de Guilherme Vardacosta, especialista em presença digital para pequenos negócios" class="hero-img-front active" data-theme="light">
+                        <img src="img/perfil-claro-lado.png" alt="" class="hero-img-side" data-theme="light" aria-hidden="true">                        
+                        <img src="img/perfil-escuro-frente.png" alt="" class="hero-img-front" data-theme="dark" aria-hidden="true">
+                        <img src="img/perfil-escuro-lado.png" alt="" class="hero-img-side" data-theme="dark" aria-hidden="true">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="solucoes">
+
+                <div class="container">
+
+                    <h2>Como posso ajudar o seu negócio a crescer</h2>
+
+                    <div class="grid-cards">
+
+                        <div class="card">
+
+                            <i class="fas fa-mobile-alt card-icon"></i>
+                            <h3>Sites 100% Mobile</h3>
+                            <p>A maioria dos seus clientes busca serviços pelo celular. Nossos sites são criados sob medida para carregar instantaneamente em qualquer tela.</p>
+
+                        </div>
+
+                        <div class="card">
+
+                            <i class="fas fa-search card-icon"></i>
+                            <h3>Pronto para o Google</h3>
+                            <p>Estrutura técnica otimizada (SEO local) para fazer com que sua empresa seja encontrada por quem procura seus serviços na sua região.</p>
+
+                        </div>
+
+                        <div class="card">
+
+                            <i class="fas fa-comments card-icon"></i>
+                            <h3>Integração com WhatsApp</h3>
+                            <p>Direcione o cliente interessado do site diretamente para o seu aplicativo de mensagens com apenas um clique, facilitando o agendamento.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="beneficios">
+
+                <div class="container beneficios-container">
+
+                    <div class="beneficios-text">
+
+                        <h2>Por que depender apenas do Instagram é um risco?</h2>
+                        <p>As redes sociais mudam as regras o tempo todo e o seu perfil pode perder o alcance da noite para o dia. Um site profissional é o seu terreno próprio na internet.</p>
+
+                        <ul class="beneficios-list">
+
+                            <li><i class="fas fa-check-circle"></i> <strong>Credibilidade instantânea:</strong> Clientes confiam mais em empresas que possuem endereço próprio na web.</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Informações organizadas:</strong> Chega de responder as mesmas dúvidas de preço, horário e localização no direct.</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Disponível 24h:</strong> Sua empresa continua vendendo e recebendo pedidos de contato mesmo quando você está descansando.</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="modelos">
+
+                <div class="container">
+
+                    <h2>Estruturas prontas para o seu segmento</h2>
+                    <p class="section-subtitle">Desenvolvemos layouts focados na conversão de clientes para diversas áreas atuantes no mercado local.</p>
+                    
+                    <div class="grid-portfolio">
+
+                        <div class="portfolio-item">
+
+                            <div class="portfolio-img-wrapper">
+
+                                <img src="img/projeto1.png" alt="Demonstração de site para salões de beleza e estética">
+
                             </div>
-                            <h3>Design Moderno e Atraente</h3>
-                            <p>Layouts visualmente impactantes para capturar a atenção dos seus clientes.</p>
+
+                            <div class="portfolio-info">
+
+                                <h3>Salões de Beleza e Barbearias</h3>
+                                <p>Design elegante com foco na exibição de serviços, galeria de cortes e botão direto para agendamento de horários.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="portfolio-item">
+
+                            <div class="portfolio-img-wrapper">
+
+                                <img src="img/projeto2.png" alt="Demonstração de site portfólio para fotógrafos profissionais">
+
+                            </div>
+
+                            <div class="portfolio-info">
+
+                                <h3>Fotógrafos e Estúdios</h3>
+                                <p>Galeria de imagens de alta performance otimizada para carregar fotos pesadas rapidamente sem perder a qualidade visual.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="portfolio-item">
+
+                            <div class="portfolio-img-wrapper">
+
+                                <img src="img/projeto3.jpeg" alt="Demonstração de site institucional para prestadores de serviço">
+
+                            </div>
+
+                            <div class="portfolio-info">
+
+                                <h3>Consultores e Prestadores de Serviço</h3>
+                                <p>Páginas focadas na apresentação de autoridade, depoimentos de clientes e formulários ágeis de contato.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="contato">
+
+                <div class="container">
+
+                    <div class="contato-wrapper">
+
+                        <div class="contato-info">
+
+                            <h2>Vamos colocar sua empresa na internet esta semana?</h2>
+                            <p>Preencha os dados ao lado para conversarmos diretamente no WhatsApp. Criaremos uma estratégia sob medida para o orçamento do seu negócio.</p>
+
                         </div>
                         
-                        <div class="service-card">
-                            <div class="icon-wrapper">
-                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M17 19.46a1.48 1.48 0 0 0 .5-1.42A7.16 7.16 0 0 0 18 13c-2 0-3.5-.83-4.5-2.5C12.5 8.84 11.5 8 10 8c-1.5 0-3 .84-4.5 2.5C4.5 12.17 3 13 1 13a7.16 7.16 0 0 0 1.5 5.04A1.48 1.48 0 0 0 4 19.46"></path>
-                                    <path d="M12 20.91V21h.09a2 2 0 0 1 1.91-2.22"></path>
-                                    <line x1="12" y1="15" x2="12" y2="21"></line>
-                                    <path d="M12 21h-2a2 2 0 0 1-2-2"></path>
-                                    <line x1="12" y1="8" x2="12" y2="10"></line>
-                                    <line x1="8" y1="8" x2="10" y2="8"></line>
-                                    <line x1="14" y1="8" x2="16" y2="8"></line>
-                                    <path d="M10 20.91A1.48 1.48 0 0 0 10.5 19.46"></path>
-                                    <path d="M14 20.91A1.48 1.48 0 0 0 13.5 19.46"></path>
-                                </svg>
-                            </div>
-                            <h3>Suporte e Manutenção</h3>
-                            <p>Apoio contínuo para garantir que seu site esteja sempre atualizado e seguro.</p>
+                        <div class="contato-form-container">
+
+                            <form id="contact-form" data-method="whatsapp">
+
+                                <div class="form-group">
+
+                                    <label for="name">Seu Nome ou Nome da Empresa</label>
+                                    <input type="text" id="name" name="name" required placeholder="Ex: João Cabeleireiro">
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="message">Fale um pouco sobre o seu negócio</label>
+                                    <textarea id="message" name="message" rows="5" required placeholder="Quais serviços você oferece e qual o seu principal objetivo com o site?"></textarea>
+
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" id="submit-button">
+
+                                    <i class="fab fa-whatsapp"></i> Enviar via WhatsApp
+
+                                </button>
+
+                            </form>
+
                         </div>
 
-                        <div class="service-card">
-                            <div class="icon-wrapper">
-                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                </svg>
-                            </div>
-                            <h3>Otimização para SEO Local</h3>
-                            <p>Técnicas para que seu negócio seja encontrado facilmente no Google por clientes na sua região.</p>
-                        </div>
                     </div>
+
                 </div>
+
             </section>
 
-            <section id="projetos" class="section-hidden">
-                <div class="container">
-                    <h2>Projetos Recentes</h2>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <img src="img/projeto1.png" alt="Projeto de site para padaria">
-                            <div class="project-info">
-                                <h3>Site para Padaria Delícia</h3>
-                                <p>Um site aconchegante para exibir produtos e atrair a comunidade local.</p>
-                                <a href="#" class="btn btn-project" target="_blank">Visitar Site</a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <img src="img/projeto2.png" alt="Projeto de site para salão de beleza">
-                            <div class="project-info">
-                                <h3>Site para Salão Bella Dona</h3>
-                                <p>Design elegante com agendamento online para facilitar a vida das clientes.</p>
-                                <a href="#" class="btn btn-project" target="_blank">Visitar Site</a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <img src="img/projeto3.jpeg" alt="Projeto de site para barbearia">
-                            <div class="project-info">
-                                <h3>Site para Barbearia Navalha</h3>
-                                <p>Visual moderno e masculino, destacando os serviços e o ambiente da barbearia.</p>
-                                <a href="#" class="btn btn-project" target="_blank">Visitar Site</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contato" class="section-hidden">
-                <div class="container">
-                    <h2>Entre em Contato</h2>
-                    <p>Escolha sua forma preferida de falar comigo. É rápido e fácil!</p>
-                    <div class="contact-wrapper">
-                        <div class="contact-tabs" role="tablist">
-                            <button class="tab-button active" data-tab="whatsapp" role="tab" aria-selected="true" aria-controls="whatsapp-form">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                                </svg>WhatsApp
-                            </button>
-                            <button class="tab-button" data-tab="email" role="tab" aria-selected="false" aria-controls="email-form">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>E-mail
-                            </button>
-                        </div>
-                        <form id="contact-form" data-method="whatsapp" aria-labelledby="contact-heading">
-                            <div class="form-group">
-                                <label for="name">Seu Nome</label>
-                                <input type="text" id="name" name="name" required placeholder="Como devo te chamar?">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensagem</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Me conte sobre seu projeto ou sua ideia."></textarea>
-                            </div>
-                            <button type="submit" class="btn" id="submit-button">Enviar via WhatsApp</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <footer>
-            <div class="container">
-                <p>&copy; 2025 Gui Vardacosta. Todos os direitos reservados.</p>
+
+            <div class="container footer-content">
+
+                <p>&copy; 2026 Guilherme Vardacosta. Todos os direitos reservados.</p>
+
+                <div class="social-links-footer" role="group" aria-label="Links corporativos no rodapé">
+
+                    <a href="https://instagram.com/guivardacosta" target="_blank" aria-label="Instagram da empresa"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/guivardacosta" target="_blank" aria-label="LinkedIn Profissional"><i class="fab fa-linkedin"></i></a>
+
+                </div>
+
             </div>
-            <div class="social-links-footer" role="group" aria-label="Links para redes sociais no rodapé">
-                <a href="https://github.com/guivardacosta" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/guivardacosta" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://instagram.com/guivardacosta" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://facebook.com/br.guivardacosta" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            </div>
+
         </footer>
-        
+
         <script src="js/script.js"></script>
+        
     </body>
 
 </html>

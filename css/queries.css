@@ -1,62 +1,94 @@
 /* ============================
-   MEDIA QUERIES
+   MEDIA QUERIES - OTIMIZAÇÃO PARA CONVERSÃO MOBILE
    ============================ */
 
-/* Mobile e Tablet Pequeno */
+/* Dispositivos Móveis e Tablets Pequenos (Até 768px) */
 @media (max-width: 768px) {
-  h1 { font-size: 2.8rem; }
-  h2 { font-size: 2.4rem; margin-bottom: 2rem; }
-  h3 { font-size: 1.6rem; }
-  p { font-size: 1rem; }
+    /* Ajustes Tipográficos para Telas Menores */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    p { font-size: 1rem; }
 
-  .container { padding: 4rem 1rem 0; }
-  
-  #header nav {
-    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
-    justify-content: center; /* Centraliza os itens */
-    gap: 1.2rem;
-    padding: 1.2rem 0;
-  }
-  .menu {
-    flex-direction: row; /* Mantém os links na horizontal */
-    gap: 1rem;
-    align-items: center;
-  }
-  .social-links-header { display: none; }
-  
-  #hero {
-    padding-top: 180px; /* Aumenta o padding para evitar que o menu cubra o texto */
-  }
-  .hero-content { flex-direction: column; text-align: center; gap: 2rem; }
-  .hero-text { max-width: 100%; }
+    /* Ajuste de Navegação: Foco absoluto no Botão de Contato */
+    #header nav {
+        padding: 0.5rem 0;
+    }
+    
+    .menu {
+        gap: 1rem;
+    }
 
-  /* Correção da foto do hero */
-  .hero-image-container { 
-    width: 100%;
-    max-width: 320px; 
-    height: 0; /* Remove a altura fixa */
-    padding-top: 100%; /* Cria um espaço de 1:1, mantendo a proporção */
-    position: relative; /* Garante que a imagem absoluta fique dentro dele */
-  }
-  
-  .hero-text h1 { font-size: 2.5rem; }
-  .hero-text p { font-size: 1.1rem; }
-  
-  section { padding: 5rem 0; }
-  
-  #contato p { font-size: 1rem; }
-  .contact-wrapper { margin: 2rem auto 0; }
-  #contact-form { padding: 2rem; }
-  
-  .pricing-card { padding: 2.5rem 1.5rem; }
-  
-  footer { padding: 2rem 0; }
-  .social-links-footer { margin-top: 1rem; }
+    /* Esconde os links de texto para não poluir o cabeçalho no celular */
+    .menu li:not(:last-child) {
+        display: none; 
+    }
+    
+    /* O Botão CTA se torna o único foco da navegação */
+    .nav-cta {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Seção Hero: Reorganização de Blocos */
+    #hero {
+        padding-top: 110px; /* Reduz espaço vazio */
+        padding-bottom: 40px;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse; /* Foto acima do texto fica ruim. Texto deve vir primeiro! */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Botões empilhados para facilitar o clique com o polegar */
+    }
+
+    .btn {
+        width: 100%; /* Botões ocupam 100% da largura em celulares */
+    }
+
+    .hero-image-container {
+        max-width: 280px; /* Imagem reduzida para não dominar a tela e empurrar o texto para baixo */
+        margin: 0 auto;
+    }
+
+    /* Ajustes de Espaçamento Geral */
+    section { padding: 3rem 0; }
+
+    /* Formulário de Contato */
+    .contato-wrapper {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .contato-info h2 {
+        text-align: center;
+    }
+
+    /* Rodapé */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
-/* Tablet e Desktop Pequeno */
+/* Tablets em modo Paisagem e Laptops Pequenos (769px a 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .hero-content { flex-direction: column; text-align: center; gap: 3rem; }
-  .hero-text { max-width: 100%; }
-  .hero-image-container { max-width: 400px; height: 400px; }
+    h1 { font-size: 2.8rem; }
+    
+    .hero-content {
+        gap: 2rem;
+    }
+    
+    .contato-wrapper {
+        padding: 3rem;
+        gap: 2rem;
+    }
+    
+    .hero-image-container {
+        max-width: 350px;
+    }
 }

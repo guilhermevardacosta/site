@@ -1,137 +1,119 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Theme Toggle Logic ---
+    
+    /* ====================================================================
+       1. GESTÃO DE TEMA E ACESSIBILIDADE DAS IMAGENS
+       ==================================================================== */
     const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
     const body = document.body;
-    const heroImageContainer = document.querySelector('.hero-image-container');
+    const heroImages = document.querySelectorAll('.hero-image-container img');
 
-    function updateHeroImageOnThemeChange(theme) {
-        if (!heroImageContainer) return;
+    // Função central para atualizar a visibilidade e a semântica das imagens
+    function updateImagesVisibility(theme, isHovered = false) {
+        heroImages.forEach(img => {
+            const isCorrectTheme = img.getAttribute('data-theme') === theme;
+            const isFrontImage = img.classList.contains('hero-img-front');
+            const isSideImage = img.classList.contains('hero-img-side');
 
-        // Esconde todas as imagens do hero
-        heroImageContainer.querySelectorAll('img').forEach(img => img.classList.remove('active'));
+            let shouldBeVisible = false;
 
-        // Ativa a imagem frontal correspondente ao tema
-        const frontImageToShow = heroImageContainer.querySelector(`.hero-img-front[data-theme="${theme}"]`);
-        if (frontImageToShow) {
-            frontImageToShow.classList.add('active');
-        }
+            if (isCorrectTheme) {
+                if (isHovered && isSideImage) shouldBeVisible = true;
+                if (!isHovered && isFrontImage) shouldBeVisible = true;
+            }
+
+            if (shouldBeVisible) {
+                img.classList.add('active');
+                img.setAttribute('aria-hidden', 'false');
+            } else {
+                img.classList.remove('active');
+                img.setAttribute('aria-hidden', 'true');
+            }
+        });
     }
 
-    const applyTheme = (theme) => {
-        body.classList.toggle('light-theme', theme === 'light');
+    // Aplica o tema, salva a preferência e ajusta as imagens
+    function applyTheme(theme) {
+        const isLight = theme === 'light';
+        body.classList.toggle('light-theme', isLight);
         localStorage.setItem('theme', theme);
-        updateHeroImageOnThemeChange(theme);
-    };
+        
+        // Atualiza ícone do botão
+        themeIcon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+        
+        // Atualiza imagens garantindo que o estado não-hovered seja o padrão
+        updateImagesVisibility(theme, false);
+    }
 
+    // Inicialização do Tema
     if (themeToggle) {
+        // Verifica se há preferência salva, caso contrário, usa o padrão do HTML (light)
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        }
+
         themeToggle.addEventListener('click', () => {
-            const currentTheme = localStorage.getItem('theme') || 'dark';
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const currentTheme = body.classList.contains('light-theme') ? 'light' : 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             applyTheme(newTheme);
         });
     }
 
-    // Verificar preferências salvas ou do sistema
-    const savedTheme = localStorage.getItem('theme');
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    const initialTheme = savedTheme || (prefersLight ? 'light' : 'dark');
-    applyTheme(initialTheme);
+    /* ====================================================================
+       2. EFEITO DE OLHAR (HOVER) NAS FOTOS DO HERO
+       ==================================================================== */
+    const heroImageContainer = document.querySelector('.hero-image-container');
+    
+    // Verifica se o dispositivo possui um cursor de precisão (mouse)
+    // Se for touch (celular), ignoramos a lógica complexa de hover para evitar bugs visuais
+    const isHoverSupported = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    // --- Hero Image Hover Effects ---
-    if (heroImageContainer) {
+    if (heroImageContainer && isHoverSupported) {
         heroImageContainer.addEventListener('mouseenter', () => {
             const currentTheme = body.classList.contains('light-theme') ? 'light' : 'dark';
-            const frontImage = heroImageContainer.querySelector(`.hero-img-front[data-theme="${currentTheme}"]`);
-            const sideImage = heroImageContainer.querySelector(`.hero-img-side[data-theme="${currentTheme}"]`);
-
-            if (frontImage) frontImage.classList.remove('active');
-            if (sideImage) sideImage.classList.add('active');
+            updateImagesVisibility(currentTheme, true);
         });
 
         heroImageContainer.addEventListener('mouseleave', () => {
             const currentTheme = body.classList.contains('light-theme') ? 'light' : 'dark';
-            const frontImage = heroImageContainer.querySelector(`.hero-img-front[data-theme="${currentTheme}"]`);
-            const sideImage = heroImageContainer.querySelector(`.hero-img-side[data-theme="${currentTheme}"]`);
-
-            if (sideImage) sideImage.classList.remove('active');
-            if (frontImage) frontImage.classList.add('active');
+            updateImagesVisibility(currentTheme, false);
         });
     }
 
-    // --- Header Scroll Effects ---
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    // --- Section Scroll Animations ---
-    const hiddenSections = document.querySelectorAll('.section-hidden');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('section-visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    hiddenSections.forEach(section => observer.observe(section));
-
-    // --- Contact Form Logic ---
+    /* ====================================================================
+       3. FORMULÁRIO DE CONTATO (WHATSAPP BUSINESS)
+       ==================================================================== */
     const contactForm = document.getElementById('contact-form');
-    
+
     if (contactForm) {
-        const submitButton = document.getElementById('submit-button');
-        const tabButtons = document.querySelectorAll('.tab-button');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Impede o recarregamento da página
 
-        // Tab switching logic
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                const selectedMethod = button.dataset.tab;
-                contactForm.dataset.method = selectedMethod;
-                submitButton.innerHTML = selectedMethod === 'whatsapp'
-                    ? 'Enviar via WhatsApp'
-                    : 'Enviar via E-mail';
-            });
-        });
-
-        // Form submission logic
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault();
+            // DADO CRÍTICO: Substitua pelo seu número real. Formato: 55 + DDD + Número
+            // Ex: 5553991079395
+            const myPhoneNumber = '5553991079395'; 
             
-            // IMPORTANTE: Substitua pelos seus dados reais
-            const myPhoneNumber = '5553991079395'; // <- Coloque seu número real aqui no formato 55DDDnúmero
-            const myEmail = 'contato@guivardacosta.com.br'; // <- Seu email real
-            
-            const name = document.getElementById('name').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const method = contactForm.dataset.method;
+            const nameInput = document.getElementById('name').value.trim();
+            const messageInput = document.getElementById('message').value.trim();
 
-            if (name === '' || message === '') {
-                alert('Por favor, preencha seu nome e a mensagem.');
+            // Validação de segurança básica
+            if (!nameInput || !messageInput) {
+                alert('Por favor, preencha os campos para que eu possa entender o seu negócio.');
                 return;
             }
 
-            if (method === 'whatsapp') {
-                const fullMessage = `Olá! Meu nome é ${name}.\n\n${message}`;
-                const encodedMessage = encodeURIComponent(fullMessage);
-                const whatsappUrl = `https://api.whatsapp.com/send?phone=${myPhoneNumber}&text=${encodedMessage}`;
-                window.open(whatsappUrl, '_blank');
-            } else if (method === 'email') {
-                const subject = `Contato do Portfólio - ${name}`;
-                const body = `Nome: ${name}\n\nMensagem:\n${message}`;
-                const encodedSubject = encodeURIComponent(subject);
-                const encodedBody = encodeURIComponent(body);
-                const mailtoUrl = `mailto:${myEmail}?subject=${encodedSubject}&body=${encodedBody}`;
-                window.location.href = mailtoUrl;
-            }
+            // Construção da mensagem formatada para vendas
+            const fullMessage = `Olá, Guilherme! Meu nome é ${nameInput}.\n\nEstou entrando em contato pelo seu site e gostaria de conversar sobre a criação de um site para o meu negócio.\n\nDetalhes que deixei no formulário:\n"${messageInput}"`;
             
+            const encodedMessage = encodeURIComponent(fullMessage);
+            const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodedMessage}`;
+            
+            // O uso do wa.me é a documentação oficial atualizada do WhatsApp e reduz 
+            // a fricção de redirecionamento em dispositivos móveis.
+            window.open(whatsappUrl, '_blank');
+            
+            // Opcional: limpa o formulário após o envio
             contactForm.reset();
         });
     }
