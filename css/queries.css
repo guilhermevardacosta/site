@@ -11,12 +11,23 @@
 
     /* Ajuste de Navegação: Foco absoluto no Botão de Contato */
     #header nav {
-        padding: 0.5rem 0;
-    }
-    
-    .menu {
-        gap: 1rem;
-    }
+      flex-wrap: wrap; /* Permite quebrar linha */
+      justify-content: space-between;
+      padding: 1rem; /* Adiciona respiro nas bordas laterais */
+  }
+  
+  .logo {
+      font-size: 1.3rem; /* Reduz o tamanho do texto da logo */
+      width: 100%; /* Força a logo a ocupar a linha inteira */
+      text-align: center;
+      margin-bottom: 0.8rem;
+  }
+
+  .menu {
+      width: 100%;
+      justify-content: center;
+      gap: 1rem;
+  }
 
     /* Esconde os links de texto para não poluir o cabeçalho no celular */
     .menu li:not(:last-child) {

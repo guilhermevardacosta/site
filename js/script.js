@@ -35,7 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Aplica o tema, salva a preferência e ajusta as imagens
     function applyTheme(theme) {
         const isLight = theme === 'light';
-        body.classList.toggle('light-theme', isLight);
+        
+        // Remove ambas as classes para garantir um estado limpo
+        body.classList.remove('light-theme', 'dark-theme');
+        
+        // Adiciona a classe correspondente
+        body.classList.add(isLight ? 'light-theme' : 'dark-theme');
+        
         localStorage.setItem('theme', theme);
         
         // Atualiza ícone do botão
