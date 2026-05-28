@@ -1,297 +1,62 @@
-/* ----------------------- Telas menores que 1152px ----------------------- */
+/* ============================
+   MEDIA QUERIES
+   ============================ */
 
-@media (max-width: 72rem) {
-  html {
-    font-size: 56.25%;
-  }
+/* Mobile e Tablet Pequeno */
+@media (max-width: 768px) {
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.4rem; margin-bottom: 2rem; }
+  h3 { font-size: 1.6rem; }
+  p { font-size: 1rem; }
 
-  .containerzao {
-    width: 92%;
-  }
-
-  .nav-do-header {
-    gap: 2rem;
-  }
-
-  .corpinho-titulo {
-    max-width: 14ch;
-  }
-
-  .post,
-  .post--texto,
-  .pagina-conteudo,
-  .pagina-topo {
-    max-width: 72rem;
-  }
-}
-
-/* ----------------------- Telas menores que 816px ----------------------- */
-
-@media (max-width: 51rem) {
-  html {
-    font-size: 50%;
-  }
-
-  .nav-do-header {
-    min-height: auto;
-    padding: 2.4rem 0;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .marca-do-site {
-    align-items: center;
-    text-align: center;
-  }
-
-  .links-do-header {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .corpinho {
-    min-height: auto;
-    padding: 8rem 0;
-    margin-bottom: 6rem;
-  }
-
-  .corpinho-p,
-  .pagina-intro,
-  .post-intro {
-    max-width: 60ch;
-  }
-
-  .hero-acoes {
-    margin-top: 2.4rem;
-  }
-
-  .pagina-interna {
-    padding: 3.5rem 0 7rem;
-  }
-
-  .post {
-    padding: 3.5rem 0 7rem;
-  }
-
-  .grade-livros {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .footer {
-    text-align: center;
-  }
-
-  .conteinerzinho-do-footer {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .cookie-banner {
-    left: 1.6rem;
-    right: 1.6rem;
-    bottom: 1.6rem;
-  }
-}
-
-/* ----------------------- Telas menores que 688px ----------------------- */
-
-@media (max-width: 43rem) {
-  html {
-    font-size: 43.75%;
-  }
-
-  .links-do-header {
+  .container { padding: 4rem 1rem 0; }
+  
+  #header nav {
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    justify-content: center; /* Centraliza os itens */
     gap: 1.2rem;
+    padding: 1.2rem 0;
   }
-
-  .botao {
-    padding: 1.2rem 2rem;
-  }
-
-  .corpinho {
-    padding: 6rem 0;
-  }
-
-  .corpinho-titulo {
-    margin-bottom: 2rem;
-    max-width: 100%;
-  }
-
-  .corpinho-p,
-  .pagina-intro,
-  .post-intro {
-    max-width: 48ch;
-  }
-
-  .hero-acoes {
-    flex-direction: column;
+  .menu {
+    flex-direction: row; /* Mantém os links na horizontal */
+    gap: 1rem;
     align-items: center;
+  }
+  .social-links-header { display: none; }
+  
+  #hero {
+    padding-top: 180px; /* Aumenta o padding para evitar que o menu cubra o texto */
+  }
+  .hero-content { flex-direction: column; text-align: center; gap: 2rem; }
+  .hero-text { max-width: 100%; }
+
+  /* Correção da foto do hero */
+  .hero-image-container { 
     width: 100%;
+    max-width: 320px; 
+    height: 0; /* Remove a altura fixa */
+    padding-top: 100%; /* Cria um espaço de 1:1, mantendo a proporção */
+    position: relative; /* Garante que a imagem absoluta fique dentro dele */
   }
-
-  .hero-acoes .botao {
-    width: 100%;
-    max-width: 32rem;
-    text-align: center;
-  }
-
-  .pagina-interna {
-    padding: 3rem 0 6rem;
-  }
-
-  .pagina-topo {
-    margin-bottom: 3rem;
-  }
-
-  .pagina-conteudo h2 {
-    font-size: 2.6rem;
-  }
-
-  .card-post {
-    padding: 2rem;
-  }
-
-  .card-post__titulo {
-    font-size: 2.6rem;
-  }
-
-  .post {
-    padding: 3rem 0 6rem;
-  }
-
-  .post-section h2 {
-    font-size: 3rem;
-  }
-
-  .post-section h3 {
-    font-size: 2.4rem;
-  }
-
-  .indice {
-    padding: 2rem;
-  }
-
-  .grade-livros {
-    grid-template-columns: 1fr;
-  }
-
-  .book-cover {
-    max-width: 22rem;
-  }
-
-  .conteinerzinho-do-footer {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-  }
-
-  .cookie-banner__actions {
-    flex-direction: column;
-  }
-
-  .cookie-btn {
-    width: 100%;
-  }
-
-  .preview {
-    width: 15rem;
-  }
+  
+  .hero-text h1 { font-size: 2.5rem; }
+  .hero-text p { font-size: 1.1rem; }
+  
+  section { padding: 5rem 0; }
+  
+  #contato p { font-size: 1rem; }
+  .contact-wrapper { margin: 2rem auto 0; }
+  #contact-form { padding: 2rem; }
+  
+  .pricing-card { padding: 2.5rem 1.5rem; }
+  
+  footer { padding: 2rem 0; }
+  .social-links-footer { margin-top: 1rem; }
 }
 
-/* ----------------------- Telas menores que 544px ----------------------- */
-
-@media (max-width: 34rem) {
-  html {
-    font-size: 37.5%;
-  }
-
-  .containerzao {
-    width: 94%;
-  }
-
-  .nav-do-header {
-    padding: 1.6rem 0;
-  }
-
-  .marca-do-site__titulo {
-    font-size: 2.8rem;
-  }
-
-  .links-do-header {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-  }
-
-  .links-do-header li {
-    width: 100%;
-  }
-
-  .links-do-header .botao {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  .corpinho {
-    padding: 5rem 0;
-  }
-
-  .corpinho-p,
-  .pagina-intro,
-  .post-intro,
-  .pagina-conteudo,
-  .post {
-    max-width: 100%;
-  }
-
-  .card-post {
-    padding: 1.8rem;
-  }
-
-  .card-post__titulo {
-    font-size: 2.4rem;
-  }
-
-  .post-section {
-    margin-top: 4rem;
-  }
-
-  .post-section h2 {
-    font-size: 2.8rem;
-  }
-
-  .post-section h3 {
-    font-size: 2.2rem;
-  }
-
-  .indice {
-    padding: 1.8rem;
-  }
-
-  .book-cover {
-    max-width: 20rem;
-  }
-
-  .footer {
-    gap: 1.6rem;
-  }
-
-  .cookie-banner__content {
-    padding: 1.8rem;
-  }
-
-  .preview {
-    width: 13rem;
-    left: 0;
-    transform: translateX(0);
-  }
-
-  .hoverzinho:hover .preview,
-  .hoverzinho:focus .preview,
-  .hoverzinho:focus-within .preview {
-    transform: translateY(-0.2rem);
-  }
+/* Tablet e Desktop Pequeno */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-content { flex-direction: column; text-align: center; gap: 3rem; }
+  .hero-text { max-width: 100%; }
+  .hero-image-container { max-width: 400px; height: 400px; }
 }
