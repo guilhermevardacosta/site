@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const heroImages = document.querySelectorAll('.hero-image-container img');
 
-    // Função central para atualizar a visibilidade e a semântica das imagens
+    // Função para atualizar a visibilidade e a semântica das imagens
     function updateImagesVisibility(theme, isHovered = false) {
         heroImages.forEach(img => {
             const isCorrectTheme = img.getAttribute('data-theme') === theme;
@@ -36,24 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyTheme(theme) {
         const isLight = theme === 'light';
         
-        // Remove ambas as classes para garantir um estado limpo
         body.classList.remove('light-theme', 'dark-theme');
-        
-        // Adiciona a classe correspondente
         body.classList.add(isLight ? 'light-theme' : 'dark-theme');
         
         localStorage.setItem('theme', theme);
-        
-        // Atualiza ícone do botão
         themeIcon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
         
-        // Atualiza imagens garantindo que o estado não-hovered seja o padrão
         updateImagesVisibility(theme, false);
     }
 
     // Inicialização do Tema
     if (themeToggle) {
-        // Verifica se há preferência salva, caso contrário, usa o padrão do HTML (light)
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             applyTheme(savedTheme);
@@ -70,9 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
        2. EFEITO DE OLHAR (HOVER) NAS FOTOS DO HERO
        ==================================================================== */
     const heroImageContainer = document.querySelector('.hero-image-container');
-    
-    // Verifica se o dispositivo possui um cursor de precisão (mouse)
-    // Se for touch (celular), ignoramos a lógica complexa de hover para evitar bugs visuais
     const isHoverSupported = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     if (heroImageContainer && isHoverSupported) {
@@ -88,38 +78,94 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ====================================================================
-       3. FORMULÁRIO DE CONTATO (WHATSAPP BUSINESS)
+       3. ANIMAÇÕES PARALLAX NO SCROLL (HERO IMAGE)
+       ==================================================================== */
+    let ticking = false;
+    
+    window.addEventListener('scroll', () => {
+        // Otimização usando requestAnimationFrame para performance fluida de rendering
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrollPosition = window.scrollY;
+                
+                // Aplica efeito Parallax apenas em desktops para preservar performance mobile
+                if (window.innerWidth > 768 && heroImageContainer) {
+                    // Multiplicador sutil (0.12) evita saltos bruscos e gera profundidade premium
+                    heroImageContainer.style.transform = `translateY(${scrollPosition * 0.12}px)`;
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    /* ====================================================================
+       4. SCROLL TRIGGER ANIMATION (INTERSECTION OBSERVER)
+       ==================================================================== */
+    const observerOptions = {
+        root: null,          // Usa o viewport como referência
+        rootMargin: '0px',
+        threshold: 0.15      // Dispara quando 15% do elemento entra na tela
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Remove a observação após animar para garantir ganho de performance
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Mapeia e adiciona a classe de trigger dinamicamente nas seções estratégicas
+    const elementsToAnimate = [
+        '#solucoes h2', 
+        '.grid-cards .card', 
+        '#beneficios .beneficios-text', 
+        '#modelos h2', 
+        '#modelos .section-subtitle',
+        '.portfolio-item', 
+        '.contato-wrapper'
+    ];
+
+    elementsToAnimate.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((el, index) => {
+            el.classList.add('reveal');
+            
+            // Adiciona atraso cascata automático para grids/listas
+            if (selector === '.grid-cards .card' || selector === '.portfolio-item') {
+                el.classList.add(`delay-${(index % 3) + 1}`);
+            }
+            
+            revealObserver.observe(el);
+        });
+    });
+
+    /* ====================================================================
+       5. FORMULÁRIO DE CONTATO (WHATSAPP BUSINESS)
        ==================================================================== */
     const contactForm = document.getElementById('contact-form');
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Impede o recarregamento da página
+            e.preventDefault();
 
-            // DADO CRÍTICO: Substitua pelo seu número real. Formato: 55 + DDD + Número
-            // Ex: 5553991079395
             const myPhoneNumber = '5553991079395'; 
-            
             const nameInput = document.getElementById('name').value.trim();
             const messageInput = document.getElementById('message').value.trim();
 
-            // Validação de segurança básica
             if (!nameInput || !messageInput) {
                 alert('Por favor, preencha os campos para que eu possa entender o seu negócio.');
                 return;
             }
 
-            // Construção da mensagem formatada para vendas
             const fullMessage = `Olá, Guilherme! Meu nome é ${nameInput}.\n\nEstou entrando em contato pelo seu site e gostaria de conversar sobre a criação de um site para o meu negócio.\n\nDetalhes que deixei no formulário:\n"${messageInput}"`;
-            
             const encodedMessage = encodeURIComponent(fullMessage);
             const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodedMessage}`;
             
-            // O uso do wa.me é a documentação oficial atualizada do WhatsApp e reduz 
-            // a fricção de redirecionamento em dispositivos móveis.
             window.open(whatsappUrl, '_blank');
-            
-            // Opcional: limpa o formulário após o envio
             contactForm.reset();
         });
     }
