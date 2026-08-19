@@ -1,0 +1,200 @@
+/* --- Paleta Cozy Fantasy (Tons terrosos e acolhedores) --- */
+:root {
+  --bg-main: #181412;        /* Marrom café bem escuro de fundo */
+  --bg-card: #241e1b;        /* Tom madeira escura para os cards */
+  --bg-card-hover: #2d2622;
+  --text-main: #f5ede4;      /* Creme suave para leitura */
+  --text-muted: #b8a898;     /* Bege acinzentado para detalhes */
+  --accent-terracotta: #c86432; /* Destaques quentes */
+  --accent-amber: #e0a948;   /* Dourado / Âmbar */
+  --tag-bg: #352b26;         /* Fundo das etiquetas */
+  --border-color: #382e28;
+  
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Hero --- */
+.hero {
+  padding: 4.5rem 0 3.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  background: radial-gradient(circle at top, #261f1b 0%, var(--bg-main) 70%);
+}
+
+.badge-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--accent-amber);
+  background: var(--tag-bg);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+.hero-desc {
+  max-width: 580px;
+  margin: 0 auto 1.75rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-terracotta);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #d9703b;
+  transform: translateY(-2px);
+}
+
+/* --- Estante / Grid --- */
+.shelf-section {
+  padding: 3.5rem 0;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.75rem;
+}
+
+/* --- Card de Livro --- */
+.book-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  background-color: var(--bg-card-hover);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.book-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background-color: #120e0d;
+}
+
+.book-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.genre-tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-amber);
+  background-color: var(--tag-bg);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+
+.book-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.book-author {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.btn-card {
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.55rem;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-card:hover {
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
+}
+
+/* --- Rodapé --- */
+footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
