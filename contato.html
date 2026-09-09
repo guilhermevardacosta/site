@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com Guilherme Vardacosta para parcerias, sugestões de livros, leituras críticas ou envio de mensagens.">
+    <title>Contato | Guilherme Vardacosta</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="components.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navegação Global -->
+    <site-header></site-header>
+
+    <main class="container page-content">
+        <header class="page-header">
+            <span class="badge-tag">Canal Direto</span>
+            <h1>Entre em Contato</h1>
+            <p class="page-subtitle">Dúvidas, parcerias editoriais, conversas sobre literatura ou feedback sobre os textos.</p>
+        </header>
+
+        <div class="contact-wrapper">
+            <!-- Painel Informativo Direto -->
+            <aside class="contact-direct">
+                <div class="info-card">
+                    <h3>Canais Diretos</h3>
+                    <p class="info-desc">Prefere enviar diretamente pelo seu gerenciador de e-mails? Fique à vontade:</p>
+                    
+                    <div class="contact-item">
+                        <span class="contact-label">E-mail Principal:</span>
+                        <a href="mailto:contato@guilhermevardacosta.com.br" class="contact-link">contato@guilhermevardacosta.com.br</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">YouTube:</span>
+                        <a href="https://www.youtube.com/@guilhermevardacosta" target="_blank" rel="noopener noreferrer" class="contact-link">@guilhermevardacosta ↗</a>
+                    </div>
+
+                    <div class="contact-box-note">
+                        <h4>Para Editoras e Autores</h4>
+                        <p>Recebo propostas de divulgação e leitura de livros físicos de fantasia. Priorizo obras dentro de fantasia épica, dark fantasy e clássicos da espada e feitiçaria.</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Formulário Estático -->
+            <section class="contact-form-container">
+                <!-- 
+                  Dica: Para ativar o envio sem servidor backend, substitua o 'action' por:
+                  https://formsubmit.co/SEU_EMAIL@DOMINIO.COM ou pelo endpoint do Formspree.
+                -->
+                <form action="https://formsubmit.co/contato@guilhermevardacosta.com.br" method="POST" class="contact-form">
+                    
+                    <!-- Configurações antispam do Formsubmit (opcionais) -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+                    <!-- Configurações do FormSubmit -->
+<input type="hidden" name="_captcha" value="false">
+<input type="text" name="_honey" style="display:none">
+<input type="hidden" name="_subject" value="Nova mensagem enviada pelo site guilhermevardacosta.com.br">
+
+                    <div class="form-group">
+                        <label for="nome">Seu Nome / Identificação <span class="required">*</span></label>
+                        <input type="text" id="nome" name="name" required placeholder="Como devo chamá-lo(a)?" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Seu E-mail <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="exemplo@email.com" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assunto">Assunto da Mensagem <span class="required">*</span></label>
+                        <select id="assunto" name="subject" class="form-control" required>
+                            <option value="" disabled selected>Selecione um tópico...</option>
+                            <option value="Conversa / Leitor">Feedback de Leitor / Dúvida</option>
+                            <option value="Parceria Editorial">Proposta Editorial / Envio de Livro</option>
+                            <option value="Canal YouTube">Canal Literário / Colaboração</option>
+                            <option value="Outro">Outro assunto</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Sua Mensagem <span class="required">*</span></label>
+                        <textarea id="mensagem" name="message" rows="6" required placeholder="Escreva aqui sua mensagem com o máximo de detalhes possível..." class="form-control"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">Enviar Mensagem</button>
+                    <p class="form-footer-note">Seus dados não serão compartilhados nem usados para envio de spam.</p>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <site-footer></site-footer>
+
+</body>
+
+</html>

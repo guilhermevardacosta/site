@@ -1,79 +1,71 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
-    <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site e blog de Guilherme Vardacosta. Resenhas, estudos sobre literatura de fantasia, ficção e bastidores de escrita.">
+    <title>Guilherme Vardacosta | Fantasia, Ensaios & Escrita</title>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Guilherme Vardacosta | Livros de Fantasia</title>
+    <!-- Fontes Cozy: Lora (títulos) e Plus Jakarta Sans (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-        <!-- Fontes Cozy: Lora (títulos) e Plus Jakarta Sans (texto) -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="components.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navegação Global -->
+    <site-header></site-header>
+
+    <!-- Apresentação / Hero Restaurada -->
+    <section class="hero">
+        <div class="container">
+            <span class="badge-tag">Escrita & Universo Literário</span>
+            <h1>Guilherme Vardacosta</h1>
+            <p class="hero-desc">Explorando mundos fantásticos, altas fantasias e ficção página por página — dos livros que leio às histórias que escrevo.</p>
         
-        <link rel="stylesheet" href="style.css">
-
-    </head>
-
-    <body>
-
-        <!-- Topo / Apresentação -->
-        <header class="hero">
-
-            <div class="container">
-
-                <span class="badge-tag">Canal Literário</span>
-                <h1>Guilherme Vardacosta</h1>
-                <p class="hero-desc">Explorando mundos fantásticos, altas fantasias, grimdark e histórias acolhedoras página por página.</p>
-            
-                <div class="hero-actions">
-
-                    <a href="https://www.youtube.com/@guilhermevardacosta" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Acessar Canal no YouTube</a>
-                    <!-- Exemplo dentro da hero ou no menu -->
-<a href="blog/" class="btn btn-primary">Ler o Blog</a>
-
-                </div>
-
+            <div class="hero-actions">
+                <a href="blog/" class="btn btn-primary">Explorar o Blog</a>
+                <a href="https://www.youtube.com/@guilhermevardacosta" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Canal no YouTube ↗</a>
             </div>
+        </div>
+    </section>
 
-        </header>
-
-        <!-- Seção da Estante Dinâmica -->
-        <main class="container">
-
-            <section class="shelf-section">
-
-                <div class="section-header">
-
-                    <h2>Estante de Resenhas</h2>
-                    <p>Livros comentados no canal organizados por subgênero.</p>
-
+    <main class="container">
+        <!-- Estante Dinâmica -->
+        <section class="shelf-section">
+            <div class="section-header">
+                <div>
+                    <h2>Estante de Leituras</h2>
+                    <p>Análises, resenhas em vídeo e estudos de estrutura narrativa.</p>
                 </div>
-
-                <!-- O JavaScript vai injetar os cards aqui dentro -->
-
-                <div id="livros-grid" class="books-grid"></div>
-
-            </section>
-
-        </main>
-
-        <!-- Rodapé -->
-
-        <footer>
-
-            <div class="container footer-content">
-
-                <p>© 2026 Guilherme Vardacosta. Feito para leitores de fantasia.</p>
                 
+                <!-- Filtros dinâmicos gerados via JS -->
+                <nav id="filtros-container" class="filters-nav" aria-label="Filtrar por subgênero"></nav>
             </div>
 
-        </footer>
+            <div id="livros-grid" class="books-grid" aria-live="polite"></div>
+        </section>
 
-        <script src="script.js"></script>
-        
-    </body>
+        <!-- Seção de Posicionamento como Autor -->
+        <section class="author-section">
+            <div class="author-card">
+                <div class="author-badge">Em Produção</div>
+                <h2>O Ofício da Escrita Fantástica</h2>
+                <p>Além das leituras críticas e resenhas, este espaço documenta o desenvolvimento de universos ficcionais próprios, contos e romances de fantasia. Acompanhe os bastidores do processo criativo nos ensaios do blog.</p>
+                <a href="blog/" class="author-link">Ler ensaios de criação literária &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <site-footer></site-footer>
+
+    <script src="script.js"></script>
+</body>
 
 </html>
