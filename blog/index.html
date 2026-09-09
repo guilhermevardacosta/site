@@ -1,55 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Literário | Guilherme Vardacosta</title>
-  
-  <!-- Fontes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Observe os dois pontos (../) para buscar o style.css na raiz -->
-  <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigos, ensaios literários, ordens de leitura e reflexões sobre a escrita de ficção fantástica por Guilherme Vardacosta.">
+    <title>Blog Literário | Guilherme Vardacosta</title>
+
+    <!-- Fontes e Estilos com barra absoluta para a raiz -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/style.css">
+    <script src="/components.js" defer></script>
 </head>
+
 <body>
 
-  <header class="hero">
-    <div class="container header-inner">
-            <a href="index.html" class="site-logo">Guilherme Vardacosta</a>
-            <nav class="main-nav">
-                <a href="index.html">Início</a>
-                <a href="blog/">Blog</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="contato.html" class="nav-active">Contato</a>
-            </nav>
-        </div>
-    <div class="container">
-      <a href="../" class="back-link">← Voltar para a Página Inicial</a>
-      <span class="badge-tag">Artigos & Guias</span>
-      <h1>Blog Literário</h1>
-      <p class="hero-desc">Ensaios, guias de leitura e reflexões aprofundadas sobre o universo da fantasia.</p>
-    </div>
-  </header>
+    <site-header></site-header>
 
-  <main class="container post-container">
-    <section class="posts-list">
-      <!-- Exemplo de item do blog -->
-      <article class="blog-item">
-        <span class="badge-tag">Guia de Leitura</span>
-        <h2><a href="por-onde-comecar-sanderson.html">Por onde começar a ler Brandon Sanderson?</a></h2>
-        <p>Um mapa completo para entrar no universo da Cosmere sem se perder entre mundos e trilogias.</p>
-        <span class="post-meta">18 de agosto de 2026 • 7 min de leitura</span>
-      </article>
-    </section>
-  </main>
+    <main class="container page-content">
+        <header class="page-header">
+            <span class="badge-tag">Ensaios & Crítica</span>
+            <h1>Crônicas do Ofício</h1>
+            <p class="page-subtitle">Reflexões sobre estrutura de narrativa fantástica, worldbuilding e leituras aprofundadas.</p>
+        </header>
 
-  <footer>
-    <div class="container footer-content">
-      <p>© 2026 Guilherme Vardacosta. Feito para leitores de fantasia.</p>
-    </div>
-  </footer>
+        <!-- Grade de Artigos -->
+        <section class="blog-feed">
+
+            <!-- Artigo 1 -->
+            <article class="post-preview-card">
+                <div class="post-preview-meta">
+                    <span class="genre-tag">Estrutura Narrativa</span>
+                    <time datetime="2026-09-09">09 de Setembro, 2026</time>
+                </div>
+                <h2 class="post-preview-title">
+                    <a href="/blog/the-name-of-the-wind">A prosa poética e a narrativa em camadas em The Name of the Wind</a>
+                </h2>
+                <p class="post-preview-excerpt">
+                    Uma análise de como Patrick Rothfuss utiliza a técnica da história emoldurada para criar cumplicidade entre Kvothe e o leitor, desacelerando o ritmo sem perder o suspense.
+                </p>
+                <div class="post-preview-footer">
+                    <span class="read-time">Tempo de leitura: 8 min</span>
+                    <a href="/blog/the-name-of-the-wind" class="read-more-link">Ler artigo &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Artigo 2 -->
+            <article class="post-preview-card">
+                <div class="post-preview-meta">
+                    <span class="genre-tag">Bastidores de Escrita</span>
+                    <time datetime="2026-08-28">28 de Agosto, 2026</time>
+                </div>
+                <h2 class="post-preview-title">
+                    <a href="/blog/construcao-de-mundo-espada-e-feiticaria">Worldbuilding em Sword and Sorcery: Menos enciclopédia, mais atmosfera</a>
+                </h2>
+                <p class="post-preview-excerpt">
+                    Por que os clássicos da espada e feitiçaria priorizavam a sensação de perigo iminente em vez de centenas de páginas de cronologias reais vazias.
+                </p>
+                <div class="post-preview-footer">
+                    <span class="read-time">Tempo de leitura: 6 min</span>
+                    <a href="/blog/construcao-de-mundo-espada-e-feiticaria" class="read-more-link">Ler artigo &rarr;</a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <site-footer></site-footer>
 
 </body>
+
 </html>
