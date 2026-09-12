@@ -48,7 +48,9 @@ html, body, .site-header, .book-card, .post-preview-card,
 }
 
 :root {
-  --font-serif: 'Lora', Georgia, serif;
+  /* Se o usuário estiver no Windows, usa a Sitka original; 
+     no celular, Mac ou Linux, usa a Literata do Google Fonts */
+  --font-serif: 'Sitka Text', 'Sitka Heading', 'Literata', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -75,6 +77,11 @@ body {
 site-header, 
 site-footer {
   display: block;
+}
+
+h1, h2, h3, .site-logo {
+  font-family: 'Sitka Heading', 'Sitka Display', 'Literata', Georgia, serif;
+  letter-spacing: -0.015em;
 }
 
 /* ==========================================================================
