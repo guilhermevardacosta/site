@@ -16,7 +16,7 @@
   --accent-amber: #e8b058;     /* Dourado pálido */
   --tag-bg: #241e1b;
   --quote-bg: rgba(232, 176, 88, 0.04);
-  --header-bg-scroll: rgba(20, 18, 17, 0.82);
+  --header-bg-scroll: rgba(20, 18, 17, 0.85);
   --header-shadow: rgba(0, 0, 0, 0.35);
 }
 
@@ -33,11 +33,30 @@
   --accent-amber: #b0782a;
   --tag-bg: #ece6db;
   --quote-bg: rgba(184, 80, 35, 0.04);
-  --header-bg-scroll: rgba(247, 244, 237, 0.85);
+  --header-bg-scroll: rgba(247, 244, 237, 0.88);
   --header-shadow: rgba(40, 30, 20, 0.08);
 }
 
-/* Transição Suave Global */
+/* ==========================================================================
+   TIPOGRAFIA & TRANSIÇÕES GLOBAIS
+   ========================================================================== */
+:root {
+  /* Leitura/Prosa: Sitka Text no Windows, Literata em celulares/outros sistemas */
+  --font-serif: 'Sitka Text', 'Literata', Georgia, serif;
+  
+  /* Títulos com cortes ópticos da Sitka */
+  --font-heading: 'Sitka Heading', 'Sitka Display', 'Literata', Georgia, serif;
+  
+  /* Elementos de interface, botões e tags */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html, body, .site-header, .book-card, .post-preview-card, 
 .legal-card, .info-card, .contact-form, .about-callout, 
 .author-card, .sidebar-card, .form-control, .btn, .filter-btn {
@@ -45,19 +64,6 @@ html, body, .site-header, .book-card, .post-preview-card,
               color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.3s ease;
-}
-
-:root {
-  /* Se o usuário estiver no Windows, usa a Sitka original; 
-     no celular, Mac ou Linux, usa a Literata do Google Fonts */
-  --font-serif: 'Sitka Text', 'Sitka Heading', 'Literata', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -74,21 +80,44 @@ body {
   padding: 0 1.75rem;
 }
 
+/* Garante comportamento de bloco para os Web Components */
 site-header, 
 site-footer {
   display: block;
 }
 
+/* Títulos principais e logo */
 h1, h2, h3, .site-logo {
-  font-family: 'Sitka Heading', 'Sitka Display', 'Literata', Georgia, serif;
+  font-family: var(--font-heading);
   letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+/* Experiência de prosa literária e e-reader */
+.prose, 
+.article-body, 
+.post-preview-excerpt,
+.legal-card,
+.about-text {
+  font-family: var(--font-serif);
+}
+
+.prose p,
+.article-body p,
+.legal-card p {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  line-height: 1.85;
+  font-optical-sizing: auto;
+  color: var(--text-main);
+  opacity: 0.92;
+  margin-bottom: 1.5rem;
 }
 
 /* ==========================================================================
-   HEADER & BOTÃO DE TEMA
+   HEADER FIXO COM TRANSIÇÃO TRANSLÚCIDA
    ========================================================================== */
 site-header {
-  display: block;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -103,7 +132,6 @@ site-header {
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estado acionado pelo JavaScript quando a página desce mais de 20px */
 site-header.scrolled .site-header {
   background-color: var(--header-bg-scroll);
   box-shadow: 0 10px 30px var(--header-shadow);
@@ -118,12 +146,9 @@ site-header.scrolled .site-header {
 }
 
 .site-logo {
-  font-family: var(--font-serif);
   font-size: 1.25rem;
-  font-weight: 500;
   color: var(--text-main);
   text-decoration: none;
-  letter-spacing: -0.01em;
 }
 
 .header-right {
@@ -196,9 +221,7 @@ site-header.scrolled .site-header {
 }
 
 .hero h1 {
-  font-family: var(--font-serif);
   font-size: 3.2rem;
-  font-weight: 500;
   color: var(--text-main);
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
@@ -281,9 +304,7 @@ site-header.scrolled .site-header {
 }
 
 .section-header h2 {
-  font-family: var(--font-serif);
   font-size: 2.1rem;
-  font-weight: 500;
   margin-bottom: 0.35rem;
 }
 
@@ -369,9 +390,8 @@ site-header.scrolled .site-header {
 }
 
 .book-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 500;
   line-height: 1.35;
   margin-bottom: 0.3rem;
 }
@@ -440,9 +460,7 @@ site-header.scrolled .site-header {
 }
 
 .author-card h2 {
-  font-family: var(--font-serif);
   font-size: 1.85rem;
-  font-weight: 500;
   margin-bottom: 0.85rem;
 }
 
@@ -466,7 +484,7 @@ site-header.scrolled .site-header {
 }
 
 /* ==========================================================================
-   PÁGINAS DE CONTEÚDO & FORMULÁRIOS
+   PÁGINAS DE CONTEÚDO (SOBRE & CONTATO)
    ========================================================================== */
 .page-content {
   padding: 4.5rem 1.75rem 6rem;
@@ -479,9 +497,7 @@ site-header.scrolled .site-header {
 }
 
 .page-header h1 {
-  font-family: var(--font-serif);
   font-size: 2.75rem;
-  font-weight: 500;
   margin-bottom: 0.75rem;
 }
 
@@ -502,18 +518,8 @@ site-header.scrolled .site-header {
 }
 
 .prose h2 {
-  font-family: var(--font-serif);
   font-size: 1.65rem;
-  font-weight: 500;
   margin: 2.5rem 0 1rem;
-}
-
-.prose p {
-  color: var(--text-main);
-  opacity: 0.9;
-  margin-bottom: 1.5rem;
-  font-size: 1.08rem;
-  line-height: 1.8;
 }
 
 .about-callout, .sidebar-card, .info-card, .contact-form, .legal-card {
@@ -523,6 +529,115 @@ site-header.scrolled .site-header {
   padding: 2.25rem;
 }
 
+.about-callout {
+  border-left: 3px solid var(--accent);
+}
+
+.about-callout h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.about-callout ul {
+  padding-left: 1.35rem;
+}
+
+.about-callout li {
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+}
+
+.sidebar-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.sidebar-list {
+  list-style: none;
+  margin-bottom: 1.75rem;
+}
+
+.sidebar-list li {
+  font-size: 0.92rem;
+  margin-bottom: 0.9rem;
+  color: var(--text-muted);
+}
+
+.sidebar-list li span {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* Painel de Contato Direto */
+.info-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-item {
+  margin-bottom: 1.25rem;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.contact-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  word-break: break-all;
+}
+
+.contact-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.contact-box-note {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.contact-box-note h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.contact-box-note p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Formulário de Contato */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -534,6 +649,10 @@ site-header.scrolled .site-header {
   margin-bottom: 0.5rem;
 }
 
+.required {
+  color: var(--accent);
+}
+
 .form-control {
   width: 100%;
   background-color: var(--bg-main);
@@ -543,17 +662,33 @@ site-header.scrolled .site-header {
   color: var(--text-main);
   font-family: var(--font-sans);
   font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(217, 110, 56, 0.12);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 125px;
 }
 
 .btn-submit {
   width: 100%;
   cursor: pointer;
   border: none;
+  font-size: 0.95rem;
+  padding: 0.85rem;
+}
+
+.form-footer-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
 }
 
 /* ==========================================================================
@@ -579,37 +714,6 @@ site-header.scrolled .site-header {
   transform: translateY(-2px);
 }
 
-.post-preview-title {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
-  font-weight: 500;
-  line-height: 1.35;
-  margin-bottom: 0.75rem;
-}
-
-.post-preview-title a {
-  color: var(--text-main);
-  text-decoration: none;
-}
-
-.post-preview-title a:hover {
-  color: var(--accent);
-}
-
-.article-body blockquote {
-  border-left: 2px solid var(--accent);
-  padding: 1.25rem 0 1.25rem 1.75rem;
-  margin: 2.5rem 0;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.3rem;
-  color: var(--text-main);
-  background: var(--quote-bg);
-}
-
-/* ==========================================================================
-   ELEMENTOS DE APOIO DO CARD DO BLOG
-   ========================================================================== */
 .post-preview-meta {
   display: flex;
   align-items: center;
@@ -623,10 +727,26 @@ site-header.scrolled .site-header {
   letter-spacing: 0.02em;
 }
 
+.post-preview-title {
+  font-size: 1.75rem;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.post-preview-title a {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.post-preview-title a:hover {
+  color: var(--accent);
+}
+
 .post-preview-excerpt {
   color: var(--text-muted);
-  font-size: 1.02rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.75;
   margin-bottom: 1.75rem;
 }
 
@@ -659,7 +779,141 @@ site-header.scrolled .site-header {
   color: var(--accent-hover);
 }
 
+/* Artigo Individual */
+.article-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+.article-header {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+}
+
+.breadcrumb {
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.article-header h1 {
+  font-size: 2.65rem;
+  line-height: 1.25;
+  margin: 0.85rem 0 1.25rem;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.article-body h2 {
+  font-size: 1.75rem;
+  margin: 3rem 0 1.25rem;
+}
+
+.article-body blockquote {
+  border-left: 2px solid var(--accent);
+  padding: 1.25rem 0 1.25rem 1.75rem;
+  margin: 2.5rem 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--text-main);
+  background: var(--quote-bg);
+  border-radius: 0 4px 4px 0;
+}
+
+.article-video-cta {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.75rem;
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (min-width: 600px) {
+  .article-video-cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.cta-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.cta-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.article-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   PÁGINAS JURÍDICAS (PRIVACIDADE & TERMOS)
+   ========================================================================== */
+.legal-card {
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding: 2.75rem;
+}
+
+.legal-card h2 {
+  font-size: 1.6rem;
+  margin: 2.25rem 0 0.85rem;
+}
+
+.legal-card h2:first-of-type {
+  margin-top: 1.5rem;
+}
+
+.legal-card ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.legal-card li {
+  margin-bottom: 0.65rem;
+  line-height: 1.75;
+  color: var(--text-main);
+  opacity: 0.9;
+}
+
+.legal-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.legal-card a:hover {
+  text-decoration: underline;
+}
 
 /* ==========================================================================
    RODAPÉ
@@ -688,26 +942,12 @@ footer {
 .footer-links a {
   color: var(--text-muted);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer-links a:hover,
 .footer-links a.active-legal {
   color: var(--text-main);
-}
-
-/* Responsivo */
-@media (max-width: 680px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .header-right {
-    width: 100%;
-    justify-content: space-between;
-  }
-  .hero h1 {
-    font-size: 2.35rem;
-  }
 }
 
 /* ==========================================================================
@@ -720,25 +960,39 @@ footer {
 
   .about-sidebar .sidebar-card {
     position: sticky;
-    top: 5.5rem; /* Espaço elegante abaixo do header fixo */
+    top: 5.5rem;
     transition: top 0.2s ease, border-color 0.3s ease;
   }
 }
 
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE UNIFICADA)
+   ========================================================================== */
 @media (max-width: 680px) {
   .header-inner {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 1.25rem;
   }
+
   .header-right {
     width: 100%;
     justify-content: space-between;
   }
+
   .main-nav {
-    gap: 0.95rem; /* Respiro equilibrado para evitar quebra em telas menores */
+    gap: 0.95rem;
   }
+
+  .hero {
+    padding: 4.5rem 0 3.5rem;
+  }
+
   .hero h1 {
     font-size: 2.35rem;
+  }
+
+  .about-callout, .sidebar-card, .info-card, .contact-form, .legal-card, .post-preview-card {
+    padding: 1.75rem;
   }
 }

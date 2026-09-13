@@ -63,14 +63,13 @@ class SiteHeader extends HTMLElement {
           
           <div class="header-right">
             <nav class="main-nav" aria-label="Navegação principal">
-              <a href="/" class="${isHome ? "nav-active" : ""}">Início</a>
-              <a href="/blog/" class="${isBlog ? "nav-active" : ""}">Blog</a>
-              <a href="/sobre" class="${isSobre ? "nav-active" : ""}">Sobre</a>
-              <a href="/contato" class="${isContato ? "nav-active" : ""}">Contato</a>
+              <a href="/" class="${isHome ? "nav-active" : ""}" ${isHome ? 'aria-current="page"' : ''}>Início</a>
+              <a href="/blog/" class="${isBlog ? "nav-active" : ""}" ${isBlog ? 'aria-current="page"' : ''}>Blog</a>
+              <a href="/sobre" class="${isSobre ? "nav-active" : ""}" ${isSobre ? 'aria-current="page"' : ''}>Sobre</a>
+              <a href="/contato" class="${isContato ? "nav-active" : ""}" ${isContato ? 'aria-current="page"' : ''}>Contato</a>
             </nav>
 
             <button id="theme-toggle" class="theme-toggle-btn" type="button" onclick="alternarTema()">
-              <!-- Ícone injetado pelo JS -->
             </button>
           </div>
         </div>
