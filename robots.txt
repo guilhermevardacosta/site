@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Caminho absoluto para o mapa do site
+Sitemap: https://guilhermevardacosta.com.br/sitemap.xml
