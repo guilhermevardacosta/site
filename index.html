@@ -2,26 +2,50 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- 1. Configurações Base -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site e blog de Guilherme Vardacosta. Resenhas, estudos sobre literatura de fantasia, ficção e bastidores de escrita.">
-    <title>Guilherme Vardacosta | Fantasia, Ensaios & Escrita</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('tema-preferido') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));</script>
-    <link rel="stylesheet" href="/style.css">
-    <script src="/components.js" defer></script>
+    <!-- 2. SEO Principal (Google) -->
+    <title>Guilherme Vardacosta | Fantasia, Ensaios & Escrita</title>
+    <meta name="description" content="Site e blog de Guilherme Vardacosta. Resenhas, estudos sobre literatura de fantasia, ficção e bastidores de escrita.">
+    <meta name="author" content="Guilherme Vardacosta">
+    <meta name="robots" content="index, follow">
+
+    <!-- 3. URL Canônica (Prevenção contra conteúdo duplicado) -->
+    <link rel="canonical" href="https://guilhermevardacosta.com.br/">
+
+    <!-- 4. Open Graph (Para gerar o card no WhatsApp e Redes Sociais) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://guilhermevardacosta.com.br/">
+    <meta property="og:title" content="Guilherme Vardacosta | Fantasia, Ensaios & Escrita">
+    <meta property="og:description" content="Site e blog de Guilherme Vardacosta. Resenhas, estudos sobre literatura de fantasia, ficção e bastidores de escrita.">
+    <meta property="og:image" content="https://guilhermevardacosta.com.br/capa-social.jpg">
+
+    <!-- 5. Ícone da aba do navegador -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖋️</text></svg>">
+
+    <!-- 6. Pré-conexões de Tipografia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- 7. Scripts Síncronos (Anti-piscada de tela) -->
+    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('tema-preferido') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));</script>
+
+    <!-- 8. Estilos Globais -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- 9. Scripts Assíncronos e Adiados -->
+    <script src="/components.js" defer></script>
+    <script src="/posts.js" defer></script>
+    <script src="/script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Navegação Global -->
     <site-header></site-header>
 
-    <!-- Apresentação / Hero Restaurada -->
     <section class="hero">
         <div class="container">
             <span class="badge-tag">Universo Literário & Escrita</span>
@@ -29,43 +53,51 @@
             <p class="hero-desc">Explorando mundos fantásticos, altas fantasias e ficção página por página — dos livros que leio às histórias que escrevo.</p>
         
             <div class="hero-actions">
-                <a href="blog/" class="btn btn-primary">Explorar o Blog</a>
+                <a href="/blog/" class="btn btn-primary">Explorar o Blog</a>
                 <a href="https://www.youtube.com/@guilhermevardacosta" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Canal no YouTube ↗</a>
             </div>
         </div>
     </section>
 
-    <main class="container" hidden>
+    <main class="container">
+        
         <!-- Estante Dinâmica -->
-        <section class="shelf-section">
+        <section class="shelf-section" hidden>
             <div class="section-header">
                 <div>
                     <h2>Estante de Leituras</h2>
                     <p>Análises, resenhas em vídeo e estudos de estrutura narrativa.</p>
                 </div>
-                
-                <!-- Filtros dinâmicos gerados via JS -->
                 <nav id="filtros-container" class="filters-nav" aria-label="Filtrar por subgênero"></nav>
             </div>
-
             <div id="livros-grid" class="books-grid" aria-live="polite"></div>
         </section>
 
-        <!-- Seção de Posicionamento como Autor -->
-        <section class="author-section" hidden>
+        <!-- Artigos Recentes do Blog -->
+        <section class="recent-posts-section">
+            <div class="section-header">
+                <div>
+                    <h2>Crônicas do Ofício</h2>
+                    <p>Últimos ensaios, reflexões de escrita e diários de bordo.</p>
+                </div>
+                <a href="/blog/" class="btn btn-secondary">Ver todo o blog &rarr;</a>
+            </div>
+            <div id="home-recent-posts" class="blog-feed"></div>
+        </section>
+
+        <!-- Posicionamento de Autor -->
+        <section class="author-section">
             <div class="author-card">
                 <div class="author-badge">Em Produção</div>
                 <h2>O Ofício da Escrita Fantástica</h2>
                 <p>Além das leituras críticas e resenhas, este espaço documenta o desenvolvimento de universos ficcionais próprios, contos e romances de fantasia. Acompanhe os bastidores do processo criativo nos ensaios do blog.</p>
-                <a href="blog/" class="author-link">Ler ensaios de criação literária &rarr;</a>
+                <a href="/blog/" class="author-link">Ler ensaios de criação literária &rarr;</a>
             </div>
         </section>
+        
     </main>
 
-    <!-- Rodapé -->
     <site-footer></site-footer>
 
-    <script src="script.js"></script>
 </body>
-
 </html>
