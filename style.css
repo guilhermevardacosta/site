@@ -1003,24 +1003,32 @@ footer {
 }
 
 /* ==========================================================================
-   IMAGENS DENTRO DOS ARTIGOS
+   IMAGENS DENTRO DOS ARTIGOS (ESTILO ILUSTRAÇÃO LITERÁRIA)
    ========================================================================== */
 .article-image {
-  margin: 2.5rem 0;
+  margin: 3.5rem auto; /* Mais respiro entre o texto e a foto */
   text-align: center;
+  width: 92%; /* Impede que a imagem cole nas bordas do celular */
+  max-width: 720px; /* Limita a largura em telas muito grandes */
 }
 
 .article-image img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  /* O segredo do celular: impede que a imagem ocupe mais de 45% da altura da tela */
+  max-height: 45vh; 
+  /* Faz um recorte automático e harmonioso caso a foto original seja muito alta */
+  object-fit: cover; 
   border-radius: 6px;
   border: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px var(--header-shadow);
+  display: block;
+  margin: 0 auto;
 }
 
 .article-image figcaption {
-  margin-top: 0.85rem;
+  margin-top: 1rem;
   font-size: 0.85rem;
   color: var(--text-muted);
   font-family: var(--font-sans);
+  font-style: italic; /* Dá um toque mais acadêmico/literário à legenda */
 }
