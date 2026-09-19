@@ -1,6 +1,15 @@
 // Lista central de postagens (as mais recentes no topo)
 const postagens = [
   {
+    titulo: "A Lâmina e a Poeira: O Guia Definitivo para o Universo de Robert E. Howard",
+    url: "/blog/guia-definitivo-robert-e-howard",
+    dataIso: "2026-09-19",
+    dataTexto: "19 de Setembro, 2026",
+    categoria: "Guia de Leitura",
+    resumo: "A cosmologia cósmica, os 5 grandes ciclos literários e a cronologia exata de 69 obras para ler o criador de Conan e da espada-e-feitiçaria da forma correta.",
+    tempoLeitura: "8 min"
+  },  
+  {
     titulo: "Olá, mundo!",
     url: "/blog/ola-mundo",
     dataIso: "2026-09-13",
