@@ -1032,3 +1032,47 @@ footer {
   font-family: var(--font-sans);
   font-style: italic; /* Dá um toque mais acadêmico/literário à legenda */
 }
+
+/* ==========================================================================
+   TABELAS EDITORIAIS DENTRO DOS ARTIGOS
+   ========================================================================== */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-size: 0.92rem;
+  font-family: var(--font-sans);
+  text-align: left;
+}
+
+.prose th, .prose td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.prose th {
+  font-weight: 600;
+  color: var(--text-main);
+  background-color: var(--tag-bg);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+}
+
+.prose td {
+  color: var(--text-muted);
+  vertical-align: top;
+}
+
+.prose td strong {
+  color: var(--text-main);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+}
+
+/* Scroll horizontal em celulares para não quebrar o layout */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
