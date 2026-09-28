@@ -21,10 +21,10 @@ const postagens = [
   {
     titulo: "Olá, mundo!",
     url: "/blog/ola-mundo",
-    dataIso: "2026-09-13",
-    dataTexto: "13 de Setembro, 2026",
+    dataIso: "2026-09-28",
+    dataTexto: "28 de Setembro, 2026",
     categoria: "Diário de Bordo",
-    resumo: "Um canto só meu na internet para falar sobre a obsessão com a literatura de fantasia, o retorno às leituras em 2026 e o plano de tirar histórias da gaveta.",
+    resumo: "Um espaço só meu na internet para falar sobre livros de fantasia.",
     tempoLeitura: "2 min"
   }
 ];
