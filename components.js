@@ -90,7 +90,7 @@ class SiteFooter extends HTMLElement {
     this.innerHTML = `
       <footer>
         <div class="container footer-content">
-          <p>© 2026 Guilherme Vardacosta. Literatura fantástica e ofício narrativo.</p>
+          <p>© 2026 Guilherme Vardacosta — Literatura fantástica e escrita.</p>
           <div class="footer-links">
             <a href="/privacidade" class="${isPrivacidade ? "active-legal" : ""}">Privacidade</a>
             <span>/</span>
