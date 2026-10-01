@@ -1,23 +1,6 @@
 // Lista central de postagens (as mais recentes no topo)
 const postagens = [
-{
-    titulo: "O Trono de Topázio e a Ilusão do Poder: O Guia Definitivo do Ciclo de Kull da Atlântida",
-    url: "/blog/guia-ciclo-de-kull",
-    dataIso: "2026-09-20",
-    dataTexto: "20 de Setembro, 2026",
-    categoria: "Guia de Leitura",
-    resumo: "A ordem de leitura estratégica e a filosofia das 10 obras do rei bárbaro da Valúsia. Onde a espada-e-feitiçaria começou.",
-    tempoLeitura: "6 min"
-  },
-  {
-    titulo: "A Lâmina e a Poeira: O Guia Definitivo para o Universo de Robert E. Howard",
-    url: "/blog/guia-definitivo-robert-e-howard",
-    dataIso: "2026-09-19",
-    dataTexto: "19 de Setembro, 2026",
-    categoria: "Guia de Leitura",
-    resumo: "A cosmologia cósmica, os 5 grandes ciclos literários e a cronologia exata de 69 obras para ler o criador de Conan e da espada-e-feitiçaria da forma correta.",
-    tempoLeitura: "8 min"
-  },  
+ 
   {
     titulo: "Olá, mundo!",
     url: "/blog/ola-mundo",

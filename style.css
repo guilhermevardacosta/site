@@ -57,6 +57,11 @@
   box-sizing: border-box;
 }
 
+/* Garante que o atributo HTML 'hidden' funcione independentemente de outras regras */
+[hidden] {
+  display: none !important;
+}
+
 html, body, .site-header, .book-card, .post-preview-card, 
 .legal-card, .info-card, .contact-form, .about-callout, 
 .author-card, .sidebar-card, .form-control, .btn, .filter-btn {
